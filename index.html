@@ -3,555 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enerqubix AI — Vertical AI for Professional Communities</title>
-  <meta name="description" content="Enerqubix AI builds purpose-built artificial intelligence products for underserved professional communities. Product 1: LifeChiAI — live April 2026.">
+  <title>Enerqubix AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <style>
-    /* Homepage-specific styles */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    .hero {
+    body {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: #F7F5F0;
+      font-family: 'Instrument Serif', serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .center {
       text-align: center;
-      padding: 80px 48px;
+      padding: 24px;
     }
 
-    .hero-inner { max-width: 900px; margin: 0 auto; }
-    .hero h1 { margin: 16px auto 28px; max-width: 800px; }
-
-    .hero-subheading {
-      max-width: 640px;
-      margin: 0 auto 40px;
-      font-size: 17px;
-      color: var(--white-60);
-      line-height: 1.8;
-    }
-
-    .principle-section { padding: var(--section-pad-desktop); }
-
-    .principle-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: var(--content-pad-desktop);
-    }
-
-    .principle-quote-wrap {
-      max-width: 760px;
-      margin: 40px auto 0;
-    }
-
-    .principle-attribution {
-      margin-top: 24px;
-      font-size: 14px;
-      color: var(--white-60);
-      text-align: right;
-    }
-
-    .whatwedo-body {
-      max-width: 720px;
-      margin: 0 auto 56px;
-      text-align: center;
-      font-size: 17px;
-      color: var(--white-60);
-      line-height: 1.8;
-    }
-
-    .pillar-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(79,70,229,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 13px;
-      color: var(--indigo-light);
+    .company {
+      font-size: clamp(28px, 5vw, 42px);
+      color: #0D7377;
+      letter-spacing: 0.01em;
       margin-bottom: 20px;
     }
 
-    .product-card-main {
-      background: var(--midnight-3);
-      border: 1px solid var(--indigo-border);
-      border-left: 3px solid var(--indigo);
-      border-radius: var(--radius-card);
-      padding: 40px 48px;
-      margin-bottom: 24px;
-    }
-
-    .product-card-main-inner {
-      display: grid;
-      grid-template-columns: 6fr 4fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .product-metrics-col {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .product-card-stealth {
-      background: var(--midnight-2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-card);
-      padding: 40px 48px;
-    }
-
-    .product-card-stealth h2 {
-      font-size: clamp(28px, 3vw, 42px);
-      color: rgba(255,255,255,0.15);
+    .tagline {
+      font-size: clamp(18px, 3vw, 26px);
       font-style: italic;
+      color: #111918;
+      margin-bottom: 32px;
     }
 
-    .tech-body-note {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-      font-size: 15px;
-      color: var(--white-60);
-      line-height: 1.8;
+    .email {
+      font-size: clamp(14px, 2vw, 17px);
+      color: #0D7377;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(13, 115, 119, 0.3);
+      padding-bottom: 2px;
+      transition: border-color 0.2s ease;
     }
 
-    .cta-card {
-      background: var(--midnight-3);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-card);
-      padding: 36px;
-      transition: border-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .cta-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-4px);
-    }
-
-    @media (max-width: 768px) {
-      .hero { padding: 60px 24px; }
-      .product-card-main { padding: 28px 24px; }
-      .product-card-main-inner { grid-template-columns: 1fr; }
-      .product-card-stealth { padding: 28px 24px; }
-    }
+    .email:hover { border-color: #0D7377; }
   </style>
 </head>
-<body class="has-announcement">
-
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="announcement-bar">
-    <p>
-      Enerqubix AI Private Limited &nbsp;·&nbsp; Incorporated in India &nbsp;·&nbsp;
-      Product 1: <a href="products.html">LifeChiAI is live →</a>
-    </p>
+<body>
+  <div class="center">
+    <p class="company">Enerqubix AI</p>
+    <p class="tagline">Something exciting is coming.</p>
+    <a href="mailto:murugesh@enerqubix.com" class="email">murugesh@enerqubix.com</a>
   </div>
-
-  <!-- NAVIGATION -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <div class="nav-logo-mark">E</div>
-        <div class="nav-logo-text">
-          <span class="nav-logo-name">ENERQUBIX AI</span>
-          <span class="nav-logo-sub">Private Limited</span>
-        </div>
-      </a>
-      <div class="nav-links">
-        <a href="about.html">About</a>
-        <a href="products.html">Products</a>
-        <a href="technology.html">Technology</a>
-        <a href="investors.html">Investors</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html" class="btn--contact-nav">Contact</a>
-      </div>
-      <button class="nav-hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- MOBILE NAV OVERLAY -->
-  <div class="nav-mobile">
-    <a href="about.html">About</a>
-    <a href="products.html">Products</a>
-    <a href="technology.html">Technology</a>
-    <a href="investors.html">Investors</a>
-    <a href="careers.html">Careers</a>
-    <a href="contact.html" class="btn--contact-nav">Contact</a>
-  </div>
-
-  <!-- ============================================================
-       HERO
-       ============================================================ -->
-  <section class="hero hero-bg">
-    <div class="hero-inner">
-      <span class="eyebrow reveal">AI-Powered Vertical SaaS &nbsp;·&nbsp; Made in India</span>
-
-      <h1 class="reveal">
-        We build AI that gives<br>
-        professionals their time back.
-      </h1>
-
-      <p class="hero-subheading reveal">
-        Enerqubix AI designs purpose-built artificial intelligence products
-        for underserved professional communities — globally.
-        Where generic software fails, we build precisely.
-      </p>
-
-      <div class="btn-row reveal" style="justify-content:center;">
-        <a href="products.html" class="btn btn--primary">Explore LifeChiAI →</a>
-        <a href="technology.html" class="btn btn--secondary">Our Technology →</a>
-      </div>
-
-      <div class="hero-stats reveal">
-        <div class="hero-stat">
-          <span class="hero-stat-num" data-count="120" data-suffix="+" data-final="120+">120+</span>
-          <span class="hero-stat-label">Countries addressable</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-num" data-count="100000" data-final="100K+">100K+</span>
-          <span class="hero-stat-label">Certified practitioners in market</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-num" style="font-family:'DM Sans',sans-serif;font-weight:700;">Zero</span>
-          <span class="hero-stat-label">Competition — globally</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       STATS BAR
-       ============================================================ -->
-  <div class="stats-bar">
-    <div class="stats-bar-inner">
-      <div class="stat-item reveal">
-        <span class="stat-item-label">Founded</span>
-        <span class="stat-item-value">2026 · Chennai</span>
-      </div>
-      <div class="stat-item reveal">
-        <span class="stat-item-label">Product 1</span>
-        <span class="stat-item-value">LifeChiAI · Live</span>
-      </div>
-      <div class="stat-item reveal">
-        <span class="stat-item-label">Markets</span>
-        <span class="stat-item-value">120+ Countries</span>
-      </div>
-      <div class="stat-item reveal">
-        <span class="stat-item-label">Competition</span>
-        <span class="stat-item-value">Zero · Globally</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================================
-       THE ENERQUBIX PRINCIPLE
-       ============================================================ -->
-  <section class="principle-section section">
-    <div class="principle-inner">
-      <div class="text-center">
-        <span class="eyebrow reveal">The Enerqubix Principle</span>
-      </div>
-      <div class="principle-quote-wrap reveal">
-        <blockquote class="pullquote">
-          "The most capable professionals in every field spend
-          an outsized proportion of their time on work that
-          requires no capability at all.
-          <br><br>
-          We are changing that — one vertical at a time."
-        </blockquote>
-        <p class="principle-attribution">
-          — Murugesh P, Founder &amp; CEO, Enerqubix AI Private Limited
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       WHAT WE DO
-       ============================================================ -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="text-center">
-        <span class="eyebrow reveal">What We Do</span>
-        <h2 class="reveal" style="margin-bottom:32px;">Vertical AI. Deep context. Global scale.</h2>
-      </div>
-      <p class="whatwedo-body reveal">
-        Generic software platforms are built for the average case. They serve everyone
-        reasonably well and no one exceptionally.
-        <br><br>
-        Enerqubix AI takes a different approach. We identify professional communities
-        where the operational problem is acute and universal, existing software was never
-        designed for their reality, the community has global scale but local density,
-        and AI can replace the operational burden entirely — not partially.
-        <br><br>
-        Then we build precisely for them.
-      </p>
-      <div class="grid-3 reveal-group">
-        <div class="card reveal">
-          <div class="pillar-icon">01</div>
-          <h3>Vertical Precision</h3>
-          <p class="mt-12">We build for one community at a time, not many loosely. Deep domain
-            knowledge produces AI that actually understands the workflows it automates.</p>
-        </div>
-        <div class="card reveal">
-          <div class="pillar-icon">02</div>
-          <h3>Community Depth</h3>
-          <p class="mt-12">We build with practitioners, not for them. The founder is the first
-            customer. Product decisions come from living the problem, not researching it from outside.</p>
-        </div>
-        <div class="card reveal">
-          <div class="pillar-icon">03</div>
-          <h3>Global from Day One</h3>
-          <p class="mt-12">Our platforms are designed for 120+ countries from architecture to
-            pricing. Multi-currency, multi-language, WhatsApp-first for all markets.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PRODUCTS
-       ============================================================ -->
-  <section class="section">
-    <div class="container">
-      <div class="text-center">
-        <span class="eyebrow reveal">Products</span>
-        <h2 class="reveal" style="margin-bottom:48px;">Products</h2>
-      </div>
-
-      <!-- Product 01 -->
-      <div class="product-card-main reveal">
-        <div class="product-card-main-inner">
-          <div>
-            <div style="margin-bottom:16px;">
-              <span class="badge badge--live"><span class="badge-dot"></span>LIVE · April 2026</span>
-            </div>
-            <span class="eyebrow" style="margin-bottom:8px;">Product 01</span>
-            <h2 style="margin-bottom:12px;">LifeChiAI</h2>
-            <p style="font-size:17px;color:var(--white-60);margin-bottom:20px;">
-              AI-Powered Operations Platform for Pranic Healing Centres
-            </p>
-            <p style="margin-bottom:28px;">
-              The AI Admin that runs your healing centre — WhatsApp intake, healer assignment,
-              invoicing, class scheduling, and weekly payouts. Automated. 24/7.
-            </p>
-            <div class="btn-row">
-              <a href="products.html" class="btn btn--primary">Explore LifeChiAI →</a>
-              <a href="https://lifechiai.com" target="_blank" rel="noopener" class="btn btn--gold">Visit lifechiai.com ↗</a>
-            </div>
-          </div>
-          <div class="product-metrics-col">
-            <div class="metric-card">
-              <div class="metric-num">120+</div>
-              <div class="metric-label">Countries addressable</div>
-            </div>
-            <div class="metric-card">
-              <div class="metric-num">100K+</div>
-              <div class="metric-label">Certified practitioners</div>
-            </div>
-            <div class="metric-card">
-              <div class="metric-num">Zero</div>
-              <div class="metric-label">Direct competitors globally</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 02 — Stealth -->
-      <div class="product-card-stealth reveal">
-        <div style="margin-bottom:16px;">
-          <span class="badge badge--soon">IN DESIGN · 2027</span>
-        </div>
-        <span class="eyebrow eyebrow--white" style="margin-bottom:8px;">Product 02</span>
-        <h2 style="margin-bottom:20px;">[Confidential]</h2>
-        <p style="color:var(--white-30);max-width:640px;margin-bottom:28px;">
-          A second vertical AI platform. Architecture shared with Product 01.
-          Category: wellness and allied health. Available under NDA to qualified investors.
-        </p>
-        <a href="investors.html" class="btn btn--gold">Request Brief under NDA →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       TECHNOLOGY CREDIBILITY
-       ============================================================ -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="text-center">
-        <span class="eyebrow reveal">Built On</span>
-        <h2 class="reveal" style="margin-bottom:32px;">Enterprise-grade AI infrastructure.</h2>
-      </div>
-      <div class="tag-cloud reveal">
-        <span class="tag">Claude Sonnet 4.5</span>
-        <span class="tag">Claude Haiku 3.5</span>
-        <span class="tag">OpenAI Whisper</span>
-        <span class="tag">Node.js + Express</span>
-        <span class="tag">React Native</span>
-        <span class="tag">MongoDB Atlas</span>
-        <span class="tag">WhatsApp Business API</span>
-        <span class="tag">Razorpay + Stripe</span>
-        <span class="tag">Cloudflare</span>
-        <span class="tag">DPDPA 2023 Compliant</span>
-      </div>
-      <p class="tech-body-note reveal">
-        Enerqubix AI platforms run on Anthropic's Claude models. Our infrastructure
-        prioritises reliability, latency, and cost efficiency at scale — with 80–90%
-        gross margins as the target at every growth stage.
-      </p>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       FOUNDER
-       ============================================================ -->
-  <section class="section">
-    <div class="container">
-      <div class="grid-6-6" style="align-items:start;">
-        <div class="reveal">
-          <span class="eyebrow">The Founder</span>
-          <h2 style="margin-bottom:24px;">Built by someone who has done the work.</h2>
-          <p style="margin-bottom:20px;">
-            Murugesh P founded Enerqubix AI after 20 years in enterprise technology
-            and after running a pranic healing centre in Chennai.
-          </p>
-          <p style="margin-bottom:20px;">
-            The insight that drives every Enerqubix product came from that experience:
-            the practitioners who need operational support the most are precisely the ones
-            for whom no software has ever been designed.
-          </p>
-          <p style="margin-bottom:32px;">
-            That gap is our market. Experience in both enterprise technology and the
-            communities we serve is our moat.
-          </p>
-          <a href="about.html" class="btn btn--secondary">Read the Full Story →</a>
-        </div>
-
-        <div class="founder-card reveal">
-          <div class="founder-initials">MP</div>
-          <h3 style="margin-bottom:4px;">Murugesh P</h3>
-          <p style="font-size:13px;color:var(--white-60);margin-bottom:20px;">
-            Founder &amp; CEO · Enerqubix AI Private Limited
-          </p>
-          <hr class="divider" style="margin:0 0 20px;">
-          <div class="founder-detail">
-            <span class="founder-detail-label">Background</span>
-            <span class="founder-detail-value">20 years enterprise IT</span>
-          </div>
-          <div class="founder-detail">
-            <span class="founder-detail-label">Practice</span>
-            <span class="founder-detail-value">Pranic healing practitioner · Pranic Wellness Centre Chennai partner</span>
-          </div>
-          <div class="founder-detail">
-            <span class="founder-detail-label">Based in</span>
-            <span class="founder-detail-value">Chennai, Tamil Nadu, India</span>
-          </div>
-          <div style="margin-top:20px;">
-            <a href="mailto:murugesh@enerqubix.ai" class="text-indigo" style="font-size:14px;">
-              murugesh@enerqubix.ai
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       THREE-COLUMN CTA
-       ============================================================ -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="grid-3 reveal-group">
-        <div class="cta-card card--top-indigo reveal">
-          <span class="eyebrow eyebrow--indigo">Investors</span>
-          <h3 style="margin-bottom:12px;">Early-stage opportunity in vertical AI SaaS.</h3>
-          <p style="margin-bottom:24px;">Strong unit economics. Global market. Zero competition. Founder-led.</p>
-          <a href="investors.html" class="btn btn--secondary">Investor Relations →</a>
-        </div>
-        <div class="cta-card card--top-gold reveal">
-          <span class="eyebrow">Partners</span>
-          <h3 style="margin-bottom:12px;">API, channel, and community network partnerships.</h3>
-          <p style="margin-bottom:24px;">We are open to partnerships that help us serve professional communities better.</p>
-          <a href="contact.html" class="btn btn--secondary">Partner With Us →</a>
-        </div>
-        <div class="cta-card card--top-white reveal">
-          <span class="eyebrow eyebrow--white">Press &amp; Media</span>
-          <h3 style="margin-bottom:12px;">Our story is available for editorial coverage.</h3>
-          <p style="margin-bottom:24px;">Interviews, editorial requests, and media enquiries — responded to within 24 hours.</p>
-          <a href="contact.html" class="btn btn--secondary">Press Enquiries →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand-col">
-          <a href="index.html" class="nav-logo">
-            <div class="nav-logo-mark">E</div>
-            <div class="nav-logo-text">
-              <span class="nav-logo-name">ENERQUBIX AI</span>
-              <span class="nav-logo-sub">Private Limited</span>
-            </div>
-          </a>
-          <p class="footer-brand-desc">
-            An AI company built from the inside of the problems it solves.
-            Incorporated in India. Building for the world.
-          </p>
-          <div class="footer-social">
-            <a href="#" title="LinkedIn">Li</a>
-            <a href="#" title="Twitter / X">X</a>
-            <a href="#" title="GitHub">Gh</a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <span class="footer-col-heading">Company</span>
-          <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="technology.html">Technology</a></li>
-            <li><a href="investors.html">Investors</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <span class="footer-col-heading">Products</span>
-          <ul>
-            <li><a href="https://lifechiai.com" target="_blank" rel="noopener">LifeChiAI ↗</a></li>
-            <li><a href="products.html">Product Roadmap</a></li>
-            <li><a href="products.html">Pricing</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <span class="footer-col-heading">Contact</span>
-          <a href="mailto:murugesh@enerqubix.ai" class="footer-contact-item">murugesh@enerqubix.ai</a>
-          <span class="footer-contact-item">Chennai, Tamil Nadu, India</span>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© 2026 Enerqubix AI Private Limited · All rights reserved</span>
-        <span class="footer-bottom-center">Built in Chennai · For the world</span>
-        <div class="footer-bottom-right">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
