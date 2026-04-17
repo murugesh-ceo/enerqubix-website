@@ -1,904 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Enerqubix AI — Building Intelligent Software for Wellness</title>
-<meta name="description" content="Enerqubix AI Private Limited — Building intelligent software for wellness and healthcare. Creator of LifeChiAI.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enerqubix AI — Vertical AI for Professional Communities</title>
+  <meta name="description" content="Enerqubix AI builds purpose-built artificial intelligence products for underserved professional communities. Product 1: LifeChiAI — live April 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Homepage-specific styles */
 
-  :root {
-    --teal:       #0D7377;
-    --teal-light: #14A085;
-    --teal-pale:  #E1F5EE;
-    --ink:        #111918;
-    --ink-mid:    #3A4A48;
-    --ink-light:  #6B7F7D;
-    --cream:      #F7F5F0;
-    --white:      #FFFFFF;
-    --rule:       rgba(13,115,119,0.12);
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
-    color: var(--ink);
-    background: var(--white);
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.25rem 5vw;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .nav-logo {
-    font-family: 'Instrument Serif', serif;
-    font-size: 1.2rem;
-    color: var(--teal);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-  }
-  .nav-logo span { color: var(--ink); font-style: italic; }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    list-style: none;
-  }
-  .nav-links a {
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: var(--ink-mid);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--teal); }
-
-  .nav-cta {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--teal);
-    text-decoration: none;
-    border: 1.5px solid var(--teal);
-    padding: 0.45rem 1.1rem;
-    border-radius: 100px;
-    transition: all 0.2s;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-  }
-  .nav-cta:hover { background: var(--teal); color: var(--white); }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 3rem;
-    padding: 8rem 5vw 5rem;
-    background: linear-gradient(140deg, var(--teal-pale) 0%, #f0faf7 45%, var(--white) 100%);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 2rem;
-    height: 1.5px;
-    background: var(--teal);
-  }
-
-  .hero h1 {
-    font-family: 'Instrument Serif', serif;
-    font-size: clamp(2.4rem, 4.5vw, 4.2rem);
-    line-height: 1.08;
-    letter-spacing: -0.03em;
-    color: var(--ink);
-    margin-bottom: 1.5rem;
-  }
-  .hero h1 em { font-style: italic; color: var(--teal); }
-
-  .hero-sub {
-    font-size: 1.05rem;
-    font-weight: 300;
-    color: var(--ink-mid);
-    max-width: 44ch;
-    margin-bottom: 2.5rem;
-    line-height: 1.7;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 3rem;
-  }
-
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--teal);
-    color: var(--white);
-    font-size: 0.95rem;
-    font-weight: 500;
-    padding: 0.8rem 1.75rem;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: all 0.2s;
-    border: 1.5px solid var(--teal);
-    min-height: 44px;
-  }
-  .btn-primary:hover { background: #0a5e62; border-color: #0a5e62; transform: translateY(-1px); }
-
-  .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: transparent;
-    color: var(--teal);
-    font-size: 0.95rem;
-    font-weight: 500;
-    padding: 0.8rem 1.75rem;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: all 0.2s;
-    border: 1.5px solid var(--teal);
-    min-height: 44px;
-  }
-  .btn-outline:hover { background: var(--teal); color: var(--white); }
-
-  /* Hero stats */
-  .hero-stats {
-    display: flex;
-    gap: 2.5rem;
-    flex-wrap: wrap;
-  }
-
-  .hero-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-stat-icon {
-    width: 32px;
-    height: 32px;
-    background: var(--teal);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-    color: white;
-  }
-
-  .hero-stat-num {
-    font-family: 'Instrument Serif', serif;
-    font-size: 1.8rem;
-    color: var(--ink);
-    line-height: 1;
-    letter-spacing: -0.03em;
-  }
-
-  .hero-stat-label {
-    font-size: 0.78rem;
-    font-weight: 400;
-    color: var(--ink-light);
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    margin-top: 0.15rem;
-  }
-
-  /* Hero visual */
-  .hero-visual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  .hero-visual svg { width: 100%; max-width: 460px; height: auto; }
-
-  /* ── WHY SECTION ── */
-  .why {
-    padding: 7rem 5vw;
-    background: var(--white);
-  }
-
-  .why-heading {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  .why-heading .section-eyebrow {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 0.75rem;
-    display: block;
-  }
-  .why-heading h2 {
-    font-family: 'Instrument Serif', serif;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    line-height: 1.2;
-  }
-  .why-heading h2 strong { color: var(--teal); font-weight: inherit; }
-
-  .why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-    max-width: 720px;
-    margin: 0 auto;
-  }
-
-  .why-card {
-    background: var(--teal-pale);
-    border: 1.5px solid rgba(13,115,119,0.15);
-    border-radius: 16px;
-    padding: 1.75rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .why-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(13,115,119,0.12);
-  }
-  .why-card:first-child { border-color: rgba(13,115,119,0.3); }
-
-  .why-card-icon {
-    width: 40px;
-    height: 40px;
-    background: var(--teal);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    margin-bottom: 1rem;
-  }
-
-  .why-card h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 0.4rem;
-    line-height: 1.3;
-  }
-  .why-card p {
-    font-size: 0.875rem;
-    font-weight: 300;
-    color: var(--ink-mid);
-    line-height: 1.6;
-  }
-
-  /* ── WAVE / TEAL SECTION ── */
-  .wave-section {
-    background: var(--teal);
-    position: relative;
-    padding: 5rem 5vw 5.5rem;
-    margin-top: 80px;
-    text-align: center;
-    overflow: hidden;
-  }
-  .wave-section::before {
-    content: '';
-    position: absolute;
-    top: -79px;
-    left: 0;
-    right: 0;
-    height: 80px;
-    background: var(--teal);
-    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  }
-
-  .wave-section-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 580px;
-    margin: 0 auto;
-  }
-
-  .wave-eyebrow {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 0.75rem;
-  }
-
-  .wave-section h2 {
-    font-family: 'Instrument Serif', serif;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    letter-spacing: -0.02em;
-    color: var(--white);
-    margin-bottom: 1.25rem;
-    line-height: 1.15;
-  }
-  .wave-section h2 em { font-style: italic; color: rgba(255,255,255,0.75); }
-
-  .wave-desc {
-    font-size: 1rem;
-    font-weight: 300;
-    color: rgba(255,255,255,0.72);
-    margin-bottom: 2rem;
-    line-height: 1.7;
-  }
-
-  .btn-white {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--white);
-    color: var(--teal);
-    font-size: 0.95rem;
-    font-weight: 500;
-    padding: 0.8rem 1.75rem;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: all 0.2s;
-    border: 1.5px solid var(--white);
-    min-height: 44px;
-  }
-  .btn-white:hover { background: var(--teal-pale); border-color: var(--teal-pale); transform: translateY(-1px); }
-
-  /* Wave bg decoration */
-  .wave-bg-circles {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    opacity: 0.06;
-    width: 700px;
-    height: 400px;
-  }
-
-  /* ── ABOUT ── */
-  .about {
-    padding: 7rem 5vw;
-    background: var(--cream);
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .section-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    align-items: start;
-    max-width: 1100px;
-  }
-
-  .section-label {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--teal);
-    padding-top: 0.5rem;
-  }
-
-  .about-body h2 {
-    font-family: 'Instrument Serif', serif;
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    margin-bottom: 1.5rem;
-  }
-  .about-body p {
-    font-size: 1.05rem;
-    font-weight: 300;
-    color: var(--ink-mid);
-    margin-bottom: 1rem;
-    max-width: 60ch;
-  }
-
-  .about-stats {
-    display: flex;
-    gap: 3rem;
-    margin-top: 2.5rem;
-    flex-wrap: wrap;
-  }
-  .stat-item { display: flex; flex-direction: column; gap: 0.2rem; }
-  .stat-num {
-    font-family: 'Instrument Serif', serif;
-    font-size: 2.2rem;
-    color: var(--teal);
-    line-height: 1;
-    letter-spacing: -0.03em;
-  }
-  .stat-label {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--ink-light);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  /* ── PRODUCT ── */
-  .product {
-    padding: 7rem 5vw;
-    background: var(--white);
-  }
-
-  .product-card {
-    max-width: 1100px;
-    background: var(--ink);
-    border-radius: 20px;
-    padding: 4rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .product-card::before {
-    content: '';
-    position: absolute;
-    top: -30%;
-    right: -10%;
-    width: 50%;
-    height: 150%;
-    background: radial-gradient(ellipse, rgba(13,115,119,0.25) 0%, transparent 65%);
-    pointer-events: none;
-  }
-
-  .product-tag {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--teal-light);
-    background: rgba(13,115,119,0.15);
-    border: 1px solid rgba(13,115,119,0.3);
-    padding: 0.3rem 0.85rem;
-    border-radius: 100px;
-    margin-bottom: 1.5rem;
-  }
-
-  .product-card h2 {
-    font-family: 'Instrument Serif', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    color: var(--white);
-    margin-bottom: 1.25rem;
-  }
-  .product-card p {
-    font-size: 1rem;
-    font-weight: 300;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.7;
-    margin-bottom: 2rem;
-  }
-
-  .product-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--teal-light);
-    font-size: 0.95rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: gap 0.2s;
-  }
-  .product-link:hover { gap: 0.85rem; }
-
-  .product-features {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  .feature-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.25rem 1.5rem;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 12px;
-  }
-  .feature-icon {
-    width: 36px;
-    height: 36px;
-    background: rgba(13,115,119,0.2);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color: var(--teal-light);
-  }
-  .feature-text h4 { font-size: 0.9rem; font-weight: 500; color: var(--white); margin-bottom: 0.2rem; }
-  .feature-text p { font-size: 0.82rem; color: rgba(255,255,255,0.45); margin: 0; line-height: 1.5; }
-
-  /* ── CONTACT ── */
-  .contact {
-    padding: 7rem 5vw;
-    background: var(--teal-pale);
-    border-top: 1px solid var(--rule);
-  }
-  .contact-inner {
-    max-width: 1100px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-  .contact h2 {
-    font-family: 'Instrument Serif', serif;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    margin-bottom: 1rem;
-  }
-  .contact p { font-size: 1rem; font-weight: 300; color: var(--ink-mid); margin-bottom: 0; }
-  .contact-details { display: flex; flex-direction: column; gap: 1.25rem; }
-  .contact-item { display: flex; flex-direction: column; gap: 0.25rem; }
-  .contact-item-label {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--teal);
-  }
-  .contact-item-value { font-size: 1rem; color: var(--ink); text-decoration: none; font-weight: 400; transition: color 0.2s; }
-  a.contact-item-value:hover { color: var(--teal); }
-
-  /* ── FOOTER ── */
-  footer {
-    padding: 2rem 5vw;
-    background: var(--ink);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .footer-logo { font-family: 'Instrument Serif', serif; font-size: 1rem; color: rgba(255,255,255,0.5); text-decoration: none; }
-  .footer-logo strong { color: rgba(255,255,255,0.9); }
-  footer p { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
     .hero {
-      grid-template-columns: 1fr;
-      padding: 7rem 4vw 4rem;
-      min-height: auto;
-    }
-    .hero-visual { display: none; }
-    .nav-links { display: none; }
-    .why-grid { grid-template-columns: 1fr; }
-
-    .section-grid,
-    .product-card,
-    .contact-inner {
-      grid-template-columns: 1fr;
-      gap: 2rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 48px;
     }
 
-    .product-card { padding: 2.5rem 1.75rem; }
-    .about-stats { gap: 2rem; }
-    nav { padding: 1rem 4vw; }
-    footer { flex-direction: column; text-align: center; }
-  }
+    .hero-inner { max-width: 900px; margin: 0 auto; }
+    .hero h1 { margin: 16px auto 28px; max-width: 800px; }
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .hero-eyebrow  { animation: fadeUp 0.6s ease both; }
-  .hero h1       { animation: fadeUp 0.7s 0.1s ease both; }
-  .hero-sub      { animation: fadeUp 0.7s 0.2s ease both; }
-  .hero-actions  { animation: fadeUp 0.7s 0.3s ease both; }
-  .hero-stats    { animation: fadeUp 0.7s 0.4s ease both; }
-</style>
+    .hero-subheading {
+      max-width: 640px;
+      margin: 0 auto 40px;
+      font-size: 17px;
+      color: var(--white-60);
+      line-height: 1.8;
+    }
+
+    .principle-section { padding: var(--section-pad-desktop); }
+
+    .principle-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--content-pad-desktop);
+    }
+
+    .principle-quote-wrap {
+      max-width: 760px;
+      margin: 40px auto 0;
+    }
+
+    .principle-attribution {
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--white-60);
+      text-align: right;
+    }
+
+    .whatwedo-body {
+      max-width: 720px;
+      margin: 0 auto 56px;
+      text-align: center;
+      font-size: 17px;
+      color: var(--white-60);
+      line-height: 1.8;
+    }
+
+    .pillar-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(79,70,229,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--indigo-light);
+      margin-bottom: 20px;
+    }
+
+    .product-card-main {
+      background: var(--midnight-3);
+      border: 1px solid var(--indigo-border);
+      border-left: 3px solid var(--indigo);
+      border-radius: var(--radius-card);
+      padding: 40px 48px;
+      margin-bottom: 24px;
+    }
+
+    .product-card-main-inner {
+      display: grid;
+      grid-template-columns: 6fr 4fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .product-metrics-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .product-card-stealth {
+      background: var(--midnight-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 40px 48px;
+    }
+
+    .product-card-stealth h2 {
+      font-size: clamp(28px, 3vw, 42px);
+      color: rgba(255,255,255,0.15);
+      font-style: italic;
+    }
+
+    .tech-body-note {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 15px;
+      color: var(--white-60);
+      line-height: 1.8;
+    }
+
+    .cta-card {
+      background: var(--midnight-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 36px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .cta-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 60px 24px; }
+      .product-card-main { padding: 28px 24px; }
+      .product-card-main-inner { grid-template-columns: 1fr; }
+      .product-card-stealth { padding: 28px 24px; }
+    }
+  </style>
 </head>
-<body>
+<body class="has-announcement">
 
-<!-- NAV -->
-<nav>
-  <a href="/" class="nav-logo">Enerqubix <span>AI</span></a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#product">Product</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="https://lifechiai.com" class="nav-cta" target="_blank">Visit LifeChiAI →</a>
-</nav>
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <p>
+      Enerqubix AI Private Limited &nbsp;·&nbsp; Incorporated in India &nbsp;·&nbsp;
+      Product 1: <a href="products.html">LifeChiAI is live →</a>
+    </p>
+  </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-eyebrow">Enerqubix AI Private Limited</div>
-    <h1>Intelligent software for <em>wellness</em> and healthcare</h1>
-    <p class="hero-sub">We build AI-powered platforms that automate operations for wellness centres — so practitioners can focus on healing.</p>
-    <div class="hero-actions">
-      <a href="https://lifechiai.com" class="btn-primary" target="_blank">
-        Explore LifeChiAI
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark">E</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">ENERQUBIX AI</span>
+          <span class="nav-logo-sub">Private Limited</span>
+        </div>
       </a>
-      <a href="#contact" class="btn-outline">Get in touch</a>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="technology.html">Technology</a>
+        <a href="investors.html">Investors</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html" class="btn--contact-nav">Contact</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <span class="hero-stat-num">120+</span>
-        <span class="hero-stat-label">Countries</span>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <span class="hero-stat-num">20+</span>
-        <span class="hero-stat-label">Years Experience</span>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <span class="hero-stat-num">1</span>
-        <span class="hero-stat-label">Product Live</span>
-      </div>
-    </div>
-  </div>
-  <div class="hero-visual" aria-hidden="true">
-    <svg viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Outer orbital rings -->
-      <circle cx="230" cy="230" r="195" stroke="#0D7377" stroke-opacity="0.07" stroke-width="1.5"/>
-      <circle cx="230" cy="230" r="150" stroke="#0D7377" stroke-opacity="0.11" stroke-width="1.5"/>
-      <circle cx="230" cy="230" r="105" stroke="#0D7377" stroke-opacity="0.17" stroke-width="1.5"/>
-      <!-- Center glow -->
-      <circle cx="230" cy="230" r="62" fill="#E1F5EE"/>
-      <circle cx="230" cy="230" r="38" fill="#0D7377" fill-opacity="0.13"/>
-      <!-- Center cross / energy symbol -->
-      <path d="M230 212 L230 248 M212 230 L248 230" stroke="#0D7377" stroke-width="2.5" stroke-linecap="round"/>
-      <!-- Orbital dots -->
-      <circle cx="230" cy="35"  r="7"  fill="#0D7377" opacity="0.22"/>
-      <circle cx="385" cy="115" r="5"  fill="#14A085" opacity="0.28"/>
-      <circle cx="405" cy="285" r="9"  fill="#0D7377" opacity="0.18"/>
-      <circle cx="305" cy="415" r="6"  fill="#14A085" opacity="0.24"/>
-      <circle cx="140" cy="408" r="8"  fill="#0D7377" opacity="0.19"/>
-      <circle cx="55"  cy="285" r="5"  fill="#14A085" opacity="0.28"/>
-      <circle cx="68"  cy="132" r="7"  fill="#0D7377" opacity="0.21"/>
-      <circle cx="175" cy="50"  r="5"  fill="#14A085" opacity="0.26"/>
-      <!-- Spoke lines -->
-      <line x1="230" y1="168" x2="230" y2="42"  stroke="#0D7377" stroke-opacity="0.1" stroke-width="1"/>
-      <line x1="292" y1="168" x2="380" y2="120" stroke="#0D7377" stroke-opacity="0.1" stroke-width="1"/>
-      <line x1="318" y1="230" x2="398" y2="278" stroke="#0D7377" stroke-opacity="0.1" stroke-width="1"/>
-      <line x1="284" y1="298" x2="303" y2="408" stroke="#0D7377" stroke-opacity="0.1" stroke-width="1"/>
-      <line x1="178" y1="298" x2="148" y2="400" stroke="#0D7377" stroke-opacity="0.1" stroke-width="1"/>
-      <line x1="142" y1="230" x2="63"  y2="284" stroke="#0D7377" stroke-opacity="0.1" stroke-width="1"/>
-      <line x1="168" y1="168" x2="76"  y2="139" stroke="#0D7377" stroke-opacity="0.1" stroke-width="1"/>
-      <!-- Floating mini-cards -->
-      <rect x="298" y="158" width="118" height="54" rx="11" fill="white" fill-opacity="0.88"/>
-      <rect x="298" y="158" width="118" height="54" rx="11" stroke="#0D7377" stroke-opacity="0.18" stroke-width="1"/>
-      <rect x="310" y="171" width="22" height="22" rx="6" fill="#0D7377" fill-opacity="0.12"/>
-      <rect x="340" y="175" width="62" height="7"  rx="3.5" fill="#0D7377" fill-opacity="0.18"/>
-      <rect x="340" y="189" width="44" height="5"  rx="2.5" fill="#0D7377" fill-opacity="0.1"/>
-      <rect x="44"  cy="184" x="44" y="184" width="108" height="50" rx="11" fill="white" fill-opacity="0.86"/>
-      <rect x="44"  y="184" width="108" height="50" rx="11" stroke="#14A085" stroke-opacity="0.2" stroke-width="1"/>
-      <rect x="56"  y="197" width="22" height="22" rx="6" fill="#14A085" fill-opacity="0.18"/>
-      <rect x="85"  y="201" width="54" height="7"  rx="3.5" fill="#0D7377" fill-opacity="0.18"/>
-      <rect x="85"  y="214" width="38" height="5"  rx="2.5" fill="#0D7377" fill-opacity="0.1"/>
-      <rect x="142" y="318" width="126" height="54" rx="11" fill="white" fill-opacity="0.9"/>
-      <rect x="142" y="318" width="126" height="54" rx="11" stroke="#14A085" stroke-opacity="0.22" stroke-width="1"/>
-      <rect x="154" y="331" width="22" height="22" rx="6" fill="#14A085" fill-opacity="0.18"/>
-      <rect x="184" y="334" width="70" height="7"  rx="3.5" fill="#0D7377" fill-opacity="0.18"/>
-      <rect x="184" y="348" width="50" height="5"  rx="2.5" fill="#0D7377" fill-opacity="0.1"/>
-    </svg>
-  </div>
-</section>
+  </nav>
 
-<!-- WHY ENERQUBIX AI -->
-<section class="why" id="why">
-  <div class="why-heading">
-    <span class="section-eyebrow">Why choose us</span>
-    <h2>Why So Many Trust<br><strong>Enerqubix AI?</strong></h2>
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="nav-mobile">
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="technology.html">Technology</a>
+    <a href="investors.html">Investors</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html" class="btn--contact-nav">Contact</a>
   </div>
-  <div class="why-grid">
-    <div class="why-card">
-      <div class="why-card-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
-      </div>
-      <h3>AI-Powered Operations</h3>
-      <p>WhatsApp agents, voice recording, and smart scheduling — all running 24/7 without manual effort.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-card-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      </div>
-      <h3>24/7 Patient Support</h3>
-      <p>Your AI agent handles bookings and enquiries round the clock — in Tamil, Hindi, and English.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-card-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-      </div>
-      <h3>Multi-Centre Ready</h3>
-      <p>Manage multiple locations from one dashboard. Consolidated billing, analytics, and payouts.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-card-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      </div>
-      <h3>Secure &amp; Private</h3>
-      <p>Patient data encrypted at rest and in transit. DPDPA 2023 compliant. Your data stays yours.</p>
-    </div>
-  </div>
-</section>
 
-<!-- TEAL WAVE SECTION -->
-<div class="wave-section">
-  <svg class="wave-bg-circles" viewBox="0 0 700 400" fill="none" aria-hidden="true">
-    <circle cx="350" cy="200" r="300" stroke="white" stroke-width="1.5"/>
-    <circle cx="350" cy="200" r="220" stroke="white" stroke-width="1.5"/>
-    <circle cx="350" cy="200" r="140" stroke="white" stroke-width="1.5"/>
-  </svg>
-  <div class="wave-section-inner">
-    <p class="wave-eyebrow">Our flagship product</p>
-    <h2>Your centre runs itself<br>with <em>LifeChiAI</em></h2>
-    <p class="wave-desc">Stay connected with patients between sessions through WhatsApp AI — bookings, reminders, and intake handled automatically. Your healer is just a message away.</p>
-    <a href="https://lifechiai.com" class="btn-white" target="_blank">
-      Explore LifeChiAI
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-  </div>
-</div>
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero hero-bg">
+    <div class="hero-inner">
+      <span class="eyebrow reveal">AI-Powered Vertical SaaS &nbsp;·&nbsp; Made in India</span>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="section-grid">
-    <div class="section-label">About us</div>
-    <div class="about-body">
-      <h2>Building at the intersection of AI and wellness</h2>
-      <p>Enerqubix AI was founded in Chennai, India with a clear mission — to give small wellness centres and independent practitioners the same operational capabilities as large enterprises, powered by AI.</p>
-      <p>Our team brings 20+ years of enterprise technology and program management experience — now applied to building products for the wellness community.</p>
-      <div class="about-stats">
-        <div class="stat-item">
-          <span class="stat-num">2026</span>
-          <span class="stat-label">Founded</span>
+      <h1 class="reveal">
+        We build AI that gives<br>
+        professionals their time back.
+      </h1>
+
+      <p class="hero-subheading reveal">
+        Enerqubix AI designs purpose-built artificial intelligence products
+        for underserved professional communities — globally.
+        Where generic software fails, we build precisely.
+      </p>
+
+      <div class="btn-row reveal" style="justify-content:center;">
+        <a href="products.html" class="btn btn--primary">Explore LifeChiAI →</a>
+        <a href="technology.html" class="btn btn--secondary">Our Technology →</a>
+      </div>
+
+      <div class="hero-stats reveal">
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-count="120" data-suffix="+" data-final="120+">120+</span>
+          <span class="hero-stat-label">Countries addressable</span>
         </div>
-        <div class="stat-item">
-          <span class="stat-num">120+</span>
-          <span class="stat-label">Countries served</span>
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-count="100000" data-final="100K+">100K+</span>
+          <span class="hero-stat-label">Certified practitioners in market</span>
         </div>
-        <div class="stat-item">
-          <span class="stat-num">1</span>
-          <span class="stat-label">Product live</span>
+        <div class="hero-stat">
+          <span class="hero-stat-num" style="font-family:'DM Sans',sans-serif;font-weight:700;">₹0</span>
+          <span class="hero-stat-label">Competition — globally</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STATS BAR
+       ============================================================ -->
+  <div class="stats-bar">
+    <div class="stats-bar-inner">
+      <div class="stat-item reveal">
+        <span class="stat-item-label">Founded</span>
+        <span class="stat-item-value">2026 · Chennai</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-item-label">Product 1</span>
+        <span class="stat-item-value">LifeChiAI · Live</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-item-label">Markets</span>
+        <span class="stat-item-value">120+ Countries</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-item-label">Competition</span>
+        <span class="stat-item-value">Zero · Globally</span>
       </div>
     </div>
   </div>
-</section>
 
-<!-- PRODUCT -->
-<section class="product" id="product">
-  <div class="product-card">
-    <div style="position:relative;z-index:1;">
-      <div class="product-tag">Our product</div>
-      <h2>LifeChiAI</h2>
-      <p>The AI Admin platform built specifically for pranic healing centres and wellness practitioners. WhatsApp AI agent, voice session recording, multi-centre management, and intelligent booking — all in one platform.</p>
-      <a href="https://lifechiai.com" class="product-link" target="_blank">
-        Visit lifechiai.com
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-    <div class="product-features">
-      <div class="feature-item">
-        <div class="feature-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
-        </div>
-        <div class="feature-text">
-          <h4>WhatsApp AI Agent</h4>
-          <p>Handles patient bookings, class enquiries, and intake — 24/7 in Tamil, Hindi &amp; English.</p>
-        </div>
+  <!-- ============================================================
+       THE ENERQUBIX PRINCIPLE
+       ============================================================ -->
+  <section class="principle-section section">
+    <div class="principle-inner">
+      <div class="text-center">
+        <span class="eyebrow reveal">The Enerqubix Principle</span>
       </div>
-      <div class="feature-item">
-        <div class="feature-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <div class="feature-text">
-          <h4>Voice Session Recording</h4>
-          <p>Healers dictate chakra scans and session notes by voice — auto-transcribed and saved.</p>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <div class="feature-text">
-          <h4>Multi-Centre Management</h4>
-          <p>One owner dashboard across all centres. Consolidated payouts, analytics, and billing.</p>
-        </div>
+      <div class="principle-quote-wrap reveal">
+        <blockquote class="pullquote">
+          "The most capable professionals in every field spend
+          an outsized proportion of their time on work that
+          requires no capability at all.
+          <br><br>
+          We are changing that — one vertical at a time."
+        </blockquote>
+        <p class="principle-attribution">
+          — Murugesh P, Founder &amp; CEO, Enerqubix AI Private Limited
+        </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="contact-inner">
-    <div>
-      <h2>Let's build something meaningful together</h2>
-      <p>Whether you run a healing centre, are a wellness practitioner, or want to explore a partnership — we would love to hear from you.</p>
+  <!-- ============================================================
+       WHAT WE DO
+       ============================================================ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="text-center">
+        <span class="eyebrow reveal">What We Do</span>
+        <h2 class="reveal" style="margin-bottom:32px;">Vertical AI. Deep context. Global scale.</h2>
+      </div>
+      <p class="whatwedo-body reveal">
+        Generic software platforms are built for the average case. They serve everyone
+        reasonably well and no one exceptionally.
+        <br><br>
+        Enerqubix AI takes a different approach. We identify professional communities
+        where the operational problem is acute and universal, existing software was never
+        designed for their reality, the community has global scale but local density,
+        and AI can replace the operational burden entirely — not partially.
+        <br><br>
+        Then we build precisely for them.
+      </p>
+      <div class="grid-3 reveal-group">
+        <div class="card reveal">
+          <div class="pillar-icon">01</div>
+          <h3>Vertical Precision</h3>
+          <p class="mt-12">We build for one community at a time, not many loosely. Deep domain
+            knowledge produces AI that actually understands the workflows it automates.</p>
+        </div>
+        <div class="card reveal">
+          <div class="pillar-icon">02</div>
+          <h3>Community Depth</h3>
+          <p class="mt-12">We build with practitioners, not for them. The founder is the first
+            customer. Product decisions come from living the problem, not researching it from outside.</p>
+        </div>
+        <div class="card reveal">
+          <div class="pillar-icon">03</div>
+          <h3>Global from Day One</h3>
+          <p class="mt-12">Our platforms are designed for 120+ countries from architecture to
+            pricing. Multi-currency, multi-language, WhatsApp-first for all markets.</p>
+        </div>
+      </div>
     </div>
-    <div class="contact-details">
-      <div class="contact-item">
-        <span class="contact-item-label">Email</span>
-        <a href="mailto:murugesh@enerqubix.com" class="contact-item-value">murugesh@enerqubix.com</a>
+  </section>
+
+  <!-- ============================================================
+       PRODUCTS
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <span class="eyebrow reveal">Products</span>
+        <h2 class="reveal" style="margin-bottom:48px;">Products</h2>
       </div>
-      <div class="contact-item">
-        <span class="contact-item-label">Product</span>
-        <a href="https://lifechiai.com" class="contact-item-value" target="_blank">lifechiai.com</a>
+
+      <!-- Product 01 -->
+      <div class="product-card-main reveal">
+        <div class="product-card-main-inner">
+          <div>
+            <div style="margin-bottom:16px;">
+              <span class="badge badge--live"><span class="badge-dot"></span>LIVE · April 2026</span>
+            </div>
+            <span class="eyebrow" style="margin-bottom:8px;">Product 01</span>
+            <h2 style="margin-bottom:12px;">LifeChiAI</h2>
+            <p style="font-size:17px;color:var(--white-60);margin-bottom:20px;">
+              AI-Powered Operations Platform for Pranic Healing Centres
+            </p>
+            <p style="margin-bottom:28px;">
+              The AI Admin that runs your healing centre — WhatsApp intake, healer assignment,
+              invoicing, class scheduling, and weekly payouts. Automated. 24/7.
+            </p>
+            <div class="btn-row">
+              <a href="products.html" class="btn btn--primary">Explore LifeChiAI →</a>
+              <a href="https://lifechiai.com" target="_blank" rel="noopener" class="btn btn--gold">Visit lifechiai.com ↗</a>
+            </div>
+          </div>
+          <div class="product-metrics-col">
+            <div class="metric-card">
+              <div class="metric-num">120+</div>
+              <div class="metric-label">Countries addressable</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-num">100K+</div>
+              <div class="metric-label">Certified practitioners</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-num">Zero</div>
+              <div class="metric-label">Direct competitors globally</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="contact-item">
-        <span class="contact-item-label">Location</span>
-        <span class="contact-item-value">Chennai, Tamil Nadu, India</span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-item-label">Legal entity</span>
-        <span class="contact-item-value">Enerqubix AI Private Limited</span>
+
+      <!-- Product 02 — Stealth -->
+      <div class="product-card-stealth reveal">
+        <div style="margin-bottom:16px;">
+          <span class="badge badge--soon">IN DESIGN · 2027</span>
+        </div>
+        <span class="eyebrow eyebrow--white" style="margin-bottom:8px;">Product 02</span>
+        <h2 style="margin-bottom:20px;">[Confidential]</h2>
+        <p style="color:var(--white-30);max-width:640px;margin-bottom:28px;">
+          A second vertical AI platform. Architecture shared with Product 01.
+          Category: wellness and allied health. Available under NDA to qualified investors.
+        </p>
+        <a href="investors.html" class="btn btn--gold">Request Brief under NDA →</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <a href="/" class="footer-logo"><strong>Enerqubix</strong> AI</a>
-  <p>© 2026 Enerqubix AI Private Limited. Chennai, India.</p>
-</footer>
+  <!-- ============================================================
+       TECHNOLOGY CREDIBILITY
+       ============================================================ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="text-center">
+        <span class="eyebrow reveal">Built On</span>
+        <h2 class="reveal" style="margin-bottom:32px;">Enterprise-grade AI infrastructure.</h2>
+      </div>
+      <div class="tag-cloud reveal">
+        <span class="tag">Claude Sonnet 4.5</span>
+        <span class="tag">Claude Haiku 3.5</span>
+        <span class="tag">OpenAI Whisper</span>
+        <span class="tag">Node.js + Express</span>
+        <span class="tag">React Native</span>
+        <span class="tag">MongoDB Atlas</span>
+        <span class="tag">WhatsApp Business API</span>
+        <span class="tag">Razorpay + Stripe</span>
+        <span class="tag">Cloudflare</span>
+        <span class="tag">DPDPA 2023 Compliant</span>
+      </div>
+      <p class="tech-body-note reveal">
+        Enerqubix AI platforms run on Anthropic's Claude models. Our infrastructure
+        prioritises reliability, latency, and cost efficiency at scale — with 80–90%
+        gross margins as the target at every growth stage.
+      </p>
+    </div>
+  </section>
 
+  <!-- ============================================================
+       FOUNDER
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-6-6" style="align-items:start;">
+        <div class="reveal">
+          <span class="eyebrow">The Founder</span>
+          <h2 style="margin-bottom:24px;">Built by someone who has done the work.</h2>
+          <p style="margin-bottom:20px;">
+            Murugesh P founded Enerqubix AI after 20 years in enterprise technology —
+            TCS, Cognizant, Squareshift — and after running a pranic healing centre in Chennai.
+          </p>
+          <p style="margin-bottom:20px;">
+            The insight that drives every Enerqubix product came from that experience:
+            the practitioners who need operational support the most are precisely the ones
+            for whom no software has ever been designed.
+          </p>
+          <p style="margin-bottom:32px;">
+            That gap is our market. Experience in both enterprise technology and the
+            communities we serve is our moat.
+          </p>
+          <a href="about.html" class="btn btn--secondary">Read the Full Story →</a>
+        </div>
+
+        <div class="founder-card reveal">
+          <div class="founder-initials">MP</div>
+          <h3 style="margin-bottom:4px;">Murugesh P</h3>
+          <p style="font-size:13px;color:var(--white-60);margin-bottom:20px;">
+            Founder &amp; CEO · Enerqubix AI Private Limited
+          </p>
+          <hr class="divider" style="margin:0 0 20px;">
+          <div class="founder-detail">
+            <span class="founder-detail-label">Background</span>
+            <span class="founder-detail-value">20 years enterprise IT · TCS · Cognizant · Squareshift</span>
+          </div>
+          <div class="founder-detail">
+            <span class="founder-detail-label">Practice</span>
+            <span class="founder-detail-value">Pranic healing practitioner · PWC Chennai founder</span>
+          </div>
+          <div class="founder-detail">
+            <span class="founder-detail-label">Based in</span>
+            <span class="founder-detail-value">Chennai, Tamil Nadu, India</span>
+          </div>
+          <div style="margin-top:20px;">
+            <a href="mailto:murugesh@enerqubix.ai" class="text-indigo" style="font-size:14px;">
+              murugesh@enerqubix.ai
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       THREE-COLUMN CTA
+       ============================================================ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="grid-3 reveal-group">
+        <div class="cta-card card--top-indigo reveal">
+          <span class="eyebrow eyebrow--indigo">Investors</span>
+          <h3 style="margin-bottom:12px;">Early-stage opportunity in vertical AI SaaS.</h3>
+          <p style="margin-bottom:24px;">Strong unit economics. Global market. Zero competition. Founder-led.</p>
+          <a href="investors.html" class="btn btn--secondary">Investor Relations →</a>
+        </div>
+        <div class="cta-card card--top-gold reveal">
+          <span class="eyebrow">Partners</span>
+          <h3 style="margin-bottom:12px;">API, channel, and community network partnerships.</h3>
+          <p style="margin-bottom:24px;">We are open to partnerships that help us serve professional communities better.</p>
+          <a href="contact.html" class="btn btn--secondary">Partner With Us →</a>
+        </div>
+        <div class="cta-card card--top-white reveal">
+          <span class="eyebrow eyebrow--white">Press &amp; Media</span>
+          <h3 style="margin-bottom:12px;">Our story is available for editorial coverage.</h3>
+          <p style="margin-bottom:24px;">Interviews, editorial requests, and media enquiries — responded to within 24 hours.</p>
+          <a href="contact.html" class="btn btn--secondary">Press Enquiries →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">E</div>
+            <div class="nav-logo-text">
+              <span class="nav-logo-name">ENERQUBIX AI</span>
+              <span class="nav-logo-sub">Private Limited</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            An AI company built from the inside of the problems it solves.
+            Incorporated in India. Building for the world.
+          </p>
+          <div class="footer-social">
+            <a href="#" title="LinkedIn">Li</a>
+            <a href="#" title="Twitter / X">X</a>
+            <a href="#" title="GitHub">Gh</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Company</span>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="technology.html">Technology</a></li>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Products</span>
+          <ul>
+            <li><a href="https://lifechiai.com" target="_blank" rel="noopener">LifeChiAI ↗</a></li>
+            <li><a href="products.html">Product Roadmap</a></li>
+            <li><a href="products.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Contact</span>
+          <a href="mailto:murugesh@enerqubix.ai" class="footer-contact-item">murugesh@enerqubix.ai</a>
+          <span class="footer-contact-item">Chennai, Tamil Nadu, India</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Enerqubix AI Private Limited · All rights reserved</span>
+        <span class="footer-bottom-center">Built in Chennai · For the world</span>
+        <div class="footer-bottom-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

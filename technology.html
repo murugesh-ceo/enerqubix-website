@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology — Enerqubix AI</title>
+  <meta name="description" content="Enerqubix AI technology stack: Claude AI models, multi-tenant architecture, WhatsApp Business API, DPDPA 2023 compliant. Built for precision, reliability, and global scale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Technology-page specific styles */
+
+    /* AI layer cards */
+    .ai-layer-card {
+      background: var(--midnight-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 32px 36px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .ai-layer-card:hover { border-color: var(--border-hover); }
+
+    .ai-layer-card--indigo { border-left: 3px solid var(--indigo); }
+    .ai-layer-card--gold   { border-left: 3px solid var(--gold); }
+    .ai-layer-card--white  { border-left: 3px solid var(--white-30); }
+
+    .ai-layer-left {
+      padding-top: 4px;
+    }
+
+    .ai-layer-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--white-30);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .ai-layer-model {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: var(--indigo-light);
+      display: block;
+      margin-top: 8px;
+    }
+
+    /* Tech stack category cards */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .stack-card {
+      background: var(--midnight-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 28px 32px;
+    }
+
+    .stack-card-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--white);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stack-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .stack-item:last-child { border-bottom: none; }
+
+    .stack-item-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--indigo-light);
+    }
+
+    .stack-item-role {
+      font-size: 12px;
+      color: var(--white-30);
+    }
+
+    /* Architecture principle cards */
+    .principle-card {
+      background: var(--midnight-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 32px 40px;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .principle-card:hover { border-color: var(--border-hover); }
+
+    .principle-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 20px;
+      color: var(--gold);
+      padding-top: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .ai-layer-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .stack-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .principle-card {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark">E</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">ENERQUBIX AI</span>
+          <span class="nav-logo-sub">Private Limited</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="technology.html">Technology</a>
+        <a href="investors.html">Investors</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html" class="btn--contact-nav">Contact</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="nav-mobile">
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="technology.html">Technology</a>
+    <a href="investors.html">Investors</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html" class="btn--contact-nav">Contact</a>
+  </div>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="page-hero hero-bg section">
+    <div class="container">
+      <span class="eyebrow reveal">Technology</span>
+      <h1 class="reveal" style="max-width:800px;margin:16px auto 0;">
+        Built for precision,<br>reliability, and global scale.
+      </h1>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       AI PHILOSOPHY
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow reveal">AI Approach</span>
+      <h2 class="reveal" style="max-width:720px;margin-bottom:28px;">
+        We build AI that runs operations.<br>Not AI that chats.
+      </h2>
+      <p class="reveal" style="max-width:680px;font-size:17px;color:var(--white-60);line-height:1.8;margin-bottom:56px;">
+        Most AI implementations ask a model to have a conversation. We ask our models
+        to run operations. The AI Admin in LifeChiAI reads a message, classifies intent,
+        queries live databases, applies business rules, executes actions, and closes the
+        loop — in under 90 seconds, without human intervention.
+      </p>
+
+      <!-- Three AI layer cards -->
+      <div class="ai-layer-card ai-layer-card--indigo reveal">
+        <div class="ai-layer-left">
+          <span class="ai-layer-label">Layer 01</span>
+          <h3 style="color:var(--white);">Intent Classification</h3>
+          <span class="ai-layer-model">Claude Haiku 3.5</span>
+        </div>
+        <p style="font-size:16px;color:var(--white-60);line-height:1.8;">
+          Fast, cost-efficient. Classifies every incoming WhatsApp message into one of
+          three skill categories in under 3 seconds. This is the triage layer — it decides
+          which agent skill activates.
+        </p>
+      </div>
+
+      <div class="ai-layer-card ai-layer-card--gold reveal">
+        <div class="ai-layer-left">
+          <span class="ai-layer-label">Layer 02</span>
+          <h3 style="color:var(--white);">Execution Engine</h3>
+          <span class="ai-layer-model">Claude Sonnet 4.5</span>
+        </div>
+        <p style="font-size:16px;color:var(--white-60);line-height:1.8;">
+          High-quality reasoning with full tool access to live data. Handles complex,
+          context-dependent decisions: which healer to assign, how to interpret an
+          ambiguous request, when to escalate to human.
+        </p>
+      </div>
+
+      <div class="ai-layer-card ai-layer-card--white reveal">
+        <div class="ai-layer-left">
+          <span class="ai-layer-label">Layer 03</span>
+          <h3 style="color:var(--white);">Safety &amp; Boundaries</h3>
+          <span class="ai-layer-model">Confidence Threshold · 80%</span>
+        </div>
+        <p style="font-size:16px;color:var(--white-60);line-height:1.8;">
+          Every agent action carries a confidence score. Below 80%: the AI escalates to
+          a human with full context. It never acts on uncertain input. It never goes
+          silent on an unresolved case.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TECH STACK
+       ============================================================ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="text-center">
+        <span class="eyebrow reveal">Stack</span>
+        <h2 class="reveal" style="margin-bottom:48px;">Technology choices made to last.</h2>
+      </div>
+
+      <div class="stack-grid reveal-group">
+
+        <div class="stack-card reveal">
+          <div class="stack-card-title">AI Models</div>
+          <div class="stack-item">
+            <span class="stack-item-name">Claude Sonnet 4.5</span>
+            <span class="stack-item-role">Agent execution</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item-name">Claude Haiku 3.5</span>
+            <span class="stack-item-role">Classification + KB</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item-name">OpenAI Whisper</span>
+            <span class="stack-item-role">Speech-to-text</span>
+          </div>
+        </div>
+
+        <div class="stack-card reveal">
+          <div class="stack-card-title">Backend</div>
+          <div class="stack-item">
+            <span class="stack-item-name">Node.js + Express 4.18</span>
+            <span class="stack-item-role">REST API</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item-name">MongoDB Atlas</span>
+            <span class="stack-item-role">Document store · Mumbai region</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item-name">Render Singapore</span>
+            <span class="stack-item-role">50ms India latency</span>
+          </div>
+        </div>
+
+        <div class="stack-card reveal">
+          <div class="stack-card-title">Frontend</div>
+          <div class="stack-item">
+            <span class="stack-item-name">React CRA</span>
+            <span class="stack-item-role">Web application</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item-name">React Native</span>
+            <span class="stack-item-role">iOS + Android (Phase 6)</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item-name">Vercel Pro</span>
+            <span class="stack-item-role">Deployment + CDN</span>
+          </div>
+        </div>
+
+        <div class="stack-card reveal">
+          <div class="stack-card-title">Messaging</div>
+          <div class="stack-item">
+            <span class="stack-item-name">Meta WhatsApp Cloud API</span>
+            <span class="stack-item-role">Primary channel</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item-name">n8n</span>
+            <span class="stack-item-role">Automation workflows</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item-name">Brevo</span>
+            <span class="stack-item-role">Transactional email</span>
+          </div>
+        </div>
+
+        <div class="stack-card reveal">
+          <div class="stack-card-title">Payments</div>
+          <div class="stack-item">
+            <span class="stack-item-name">Razorpay</span>
+            <span class="stack-item-role">India · Subscriptions + payments</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item-name">Stripe</span>
+            <span class="stack-item-role">Global · All international markets</span>
+          </div>
+        </div>
+
+        <div class="stack-card reveal">
+          <div class="stack-card-title">Infrastructure</div>
+          <div class="stack-item">
+            <span class="stack-item-name">Cloudflare</span>
+            <span class="stack-item-role">DNS · CDN · DDoS protection</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item-name">Cloudflare R2</span>
+            <span class="stack-item-role">Binary file storage</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item-name">DPDPA 2023</span>
+            <span class="stack-item-role">Privacy compliance</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOUR ARCHITECTURE PRINCIPLES
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow reveal">Architecture Principles</span>
+      <h2 class="reveal" style="margin-bottom:48px;">Decisions that compound over time.</h2>
+
+      <div class="principle-card reveal">
+        <div class="principle-num">01</div>
+        <div>
+          <h3 style="margin-bottom:12px;">Multi-Tenant from Day One</h3>
+          <p style="font-size:16px;color:var(--white-60);line-height:1.8;">
+            Every database document carries a tenantId. Every query filters by tenantId.
+            No tenant can ever access another tenant's data. This is not bolted on —
+            it is the foundation. Built in Phase 1 before any other feature.
+          </p>
+        </div>
+      </div>
+
+      <div class="principle-card reveal">
+        <div class="principle-num">02</div>
+        <div>
+          <h3 style="margin-bottom:12px;">Privacy as Infrastructure</h3>
+          <p style="font-size:16px;color:var(--white-60);line-height:1.8;">
+            Patient phone numbers are never shared with practitioners. All communications
+            go through the platform as intermediary. DPDPA 2023 compliance is a design
+            requirement, not a compliance checkbox.
+          </p>
+        </div>
+      </div>
+
+      <div class="principle-card reveal">
+        <div class="principle-num">03</div>
+        <div>
+          <h3 style="margin-bottom:12px;">Global from Architecture</h3>
+          <p style="font-size:16px;color:var(--white-60);line-height:1.8;">
+            International phone number normalisation (240+ countries) is built into the
+            core. Currency, payment gateway, and language are configuration values —
+            not code branches. A new country takes configuration, not code.
+          </p>
+        </div>
+      </div>
+
+      <div class="principle-card reveal">
+        <div class="principle-num">04</div>
+        <div>
+          <h3 style="margin-bottom:12px;">Configuration Over Forks</h3>
+          <p style="font-size:16px;color:var(--white-60);line-height:1.8;">
+            New professional verticals require a domain configuration JSON file and a
+            knowledge base document. Not a new codebase. Not a new deployment pipeline.
+            The platform expands without multiplication of technical debt.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">E</div>
+            <div class="nav-logo-text">
+              <span class="nav-logo-name">ENERQUBIX AI</span>
+              <span class="nav-logo-sub">Private Limited</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            An AI company built from the inside of the problems it solves.
+            Incorporated in India. Building for the world.
+          </p>
+          <div class="footer-social">
+            <a href="#" title="LinkedIn">Li</a>
+            <a href="#" title="Twitter / X">X</a>
+            <a href="#" title="GitHub">Gh</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Company</span>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="technology.html">Technology</a></li>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Products</span>
+          <ul>
+            <li><a href="https://lifechiai.com" target="_blank" rel="noopener">LifeChiAI ↗</a></li>
+            <li><a href="products.html">Product Roadmap</a></li>
+            <li><a href="products.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Contact</span>
+          <a href="mailto:murugesh@enerqubix.ai" class="footer-contact-item">murugesh@enerqubix.ai</a>
+          <span class="footer-contact-item">Chennai, Tamil Nadu, India</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Enerqubix AI Private Limited · All rights reserved</span>
+        <span class="footer-bottom-center">Built in Chennai · For the world</span>
+        <div class="footer-bottom-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

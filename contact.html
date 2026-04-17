@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Enerqubix AI</title>
+  <meta name="description" content="Get in touch with Enerqubix AI. All enquiries answered by Murugesh P directly — no intake queue, no support bot. Direct contact for product, investor, partner, and press enquiries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Contact-page specific styles */
+
+    /* 2x2 route cards */
+    .routes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .contact-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: var(--indigo-light);
+      margin-top: 16px;
+      transition: color 0.2s ease;
+    }
+
+    .contact-card-link:hover { color: var(--white); }
+
+    /* Company details section */
+    .company-details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .company-detail-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .company-detail-line {
+      font-size: 14px;
+      color: var(--white-60);
+      line-height: 1.6;
+    }
+
+    .company-detail-line--muted {
+      font-size: 14px;
+      color: var(--white-30);
+    }
+
+    @media (max-width: 768px) {
+      .routes-grid { grid-template-columns: 1fr; }
+      .company-details-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark">E</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">ENERQUBIX AI</span>
+          <span class="nav-logo-sub">Private Limited</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="technology.html">Technology</a>
+        <a href="investors.html">Investors</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html" class="btn--contact-nav">Contact</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="nav-mobile">
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="technology.html">Technology</a>
+    <a href="investors.html">Investors</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html" class="btn--contact-nav">Contact</a>
+  </div>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="page-hero hero-bg section">
+    <div class="container">
+      <span class="eyebrow reveal">Contact</span>
+      <h1 class="reveal" style="max-width:600px;margin:16px auto 24px;">
+        Get in touch.
+      </h1>
+      <p class="hero-body reveal">
+        All enquiries are answered by Murugesh P directly.<br>
+        No intake queue. No support bot. Direct contact.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOUR ROUTE CARDS
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="routes-grid reveal-group">
+
+        <!-- Card 1: Product -->
+        <div class="contact-card card--top-indigo reveal">
+          <span class="eyebrow eyebrow--indigo">Product Enquiries</span>
+          <h3 style="margin-bottom:12px;">For LifeChiAI — demos, trials, pricing.</h3>
+          <p style="font-size:15px;color:var(--white-60);line-height:1.7;">
+            Visit lifechiai.com for all product information, demo requests, and trial
+            signups. Or reach the founder directly.
+          </p>
+          <a href="mailto:murugesh@lifechiai.com" class="contact-email">
+            murugesh@lifechiai.com
+          </a>
+          <div>
+            <a href="https://lifechiai.com" target="_blank" rel="noopener" class="contact-card-link">
+              Visit lifechiai.com ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Investors -->
+        <div class="contact-card card--top-gold reveal">
+          <span class="eyebrow">Investor Enquiries</span>
+          <h3 style="margin-bottom:12px;">For investment, fundraising, and due diligence.</h3>
+          <p style="font-size:15px;color:var(--white-60);line-height:1.7;">
+            Email with your organisation, role, and what drew you to Enerqubix AI.
+            Response within 48 hours.
+          </p>
+          <a href="mailto:murugesh@enerqubix.ai?subject=Investor%20Enquiry%20%E2%80%94%20" class="contact-email">
+            murugesh@enerqubix.ai
+          </a>
+          <p class="contact-subject">Subject: Investor Enquiry — [Organisation]</p>
+        </div>
+
+        <!-- Card 3: Partnerships -->
+        <div class="contact-card card--top-indigo-soft reveal">
+          <span class="eyebrow eyebrow--indigo">Partnership Enquiries</span>
+          <h3 style="margin-bottom:12px;">For API, channel, and community partnerships.</h3>
+          <p style="font-size:15px;color:var(--white-60);line-height:1.7;">
+            We are open to partnerships that help us serve professional communities better.
+            MCKS foundation partnerships especially welcome.
+          </p>
+          <a href="mailto:murugesh@enerqubix.ai?subject=Partnership%20%E2%80%94%20" class="contact-email">
+            murugesh@enerqubix.ai
+          </a>
+          <p class="contact-subject">Subject: Partnership — [Organisation]</p>
+        </div>
+
+        <!-- Card 4: Press -->
+        <div class="contact-card card--top-white reveal">
+          <span class="eyebrow eyebrow--white">Press &amp; Media</span>
+          <h3 style="margin-bottom:12px;">For interviews, editorial requests, and coverage.</h3>
+          <p style="font-size:15px;color:var(--white-60);line-height:1.7;">
+            Murugesh P is available for media interviews, editorial features, and podcast
+            appearances. Response within 24 hours.
+          </p>
+          <a href="mailto:murugesh@enerqubix.ai?subject=Press%20%E2%80%94%20" class="contact-email">
+            murugesh@enerqubix.ai
+          </a>
+          <p class="contact-subject">Subject: Press — [Publication / Show]</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMPANY DETAILS
+       ============================================================ -->
+  <section class="section section--alt">
+    <div class="container">
+      <h3 class="reveal" style="margin-bottom:32px;">Company Details</h3>
+
+      <div class="company-details-grid reveal">
+        <div class="company-detail-block">
+          <span class="company-detail-line" style="font-weight:500;color:var(--white);">
+            Enerqubix AI Private Limited
+          </span>
+          <!-- TODO: Replace with actual CIN after incorporation -->
+          <span class="company-detail-line--muted">CIN: [To be inserted after incorporation]</span>
+          <span class="company-detail-line">Registered Office: Chennai, Tamil Nadu, India</span>
+          <!-- TODO: Replace with actual GST number when registered -->
+          <span class="company-detail-line--muted">GST: [To be inserted when registered]</span>
+        </div>
+
+        <div class="company-detail-block">
+          <span class="company-detail-line" style="font-weight:500;color:var(--white);">Directors</span>
+          <span class="company-detail-line">Murugesh P — Managing Director</span>
+          <span class="company-detail-line">
+            Products: <a href="https://lifechiai.com" target="_blank" rel="noopener" class="text-indigo">LifeChiAI — lifechiai.com ↗</a>
+          </span>
+          <a href="mailto:murugesh@enerqubix.ai" class="company-detail-line text-indigo" style="font-size:14px;">
+            murugesh@enerqubix.ai
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">E</div>
+            <div class="nav-logo-text">
+              <span class="nav-logo-name">ENERQUBIX AI</span>
+              <span class="nav-logo-sub">Private Limited</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            An AI company built from the inside of the problems it solves.
+            Incorporated in India. Building for the world.
+          </p>
+          <div class="footer-social">
+            <a href="#" title="LinkedIn">Li</a>
+            <a href="#" title="Twitter / X">X</a>
+            <a href="#" title="GitHub">Gh</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Company</span>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="technology.html">Technology</a></li>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Products</span>
+          <ul>
+            <li><a href="https://lifechiai.com" target="_blank" rel="noopener">LifeChiAI ↗</a></li>
+            <li><a href="products.html">Product Roadmap</a></li>
+            <li><a href="products.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Contact</span>
+          <a href="mailto:murugesh@enerqubix.ai" class="footer-contact-item">murugesh@enerqubix.ai</a>
+          <span class="footer-contact-item">Chennai, Tamil Nadu, India</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Enerqubix AI Private Limited · All rights reserved</span>
+        <span class="footer-bottom-center">Built in Chennai · For the world</span>
+        <div class="footer-bottom-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

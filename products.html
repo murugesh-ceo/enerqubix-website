@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — Enerqubix AI</title>
+  <meta name="description" content="LifeChiAI — AI-powered operations platform for pranic healing centres globally. One architecture, multiple professional verticals.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Products-page specific styles */
+
+    .product-hero-section {
+      padding: 80px 0 100px;
+    }
+
+    /* Live indicator */
+    .live-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #4ade80;
+      margin-bottom: 24px;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 8px #4ade80;
+      animation: pulse-green 2s infinite;
+    }
+
+    @keyframes pulse-green {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* LifeChiAI tagline */
+    .product-tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(18px, 2vw, 24px);
+      color: var(--white-60);
+      margin-bottom: 12px;
+    }
+
+    .product-gold-line {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      margin-bottom: 32px;
+    }
+
+    /* Metric 2x2 grid */
+    .metrics-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    /* Market position card */
+    .market-pos-card {
+      background: var(--midnight-2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--indigo);
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+
+    .market-pos-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--indigo-light);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    /* Architecture callout */
+    .arch-callout {
+      background: var(--midnight-3);
+      border: 1px solid var(--indigo-border);
+      border-radius: var(--radius-card);
+      padding: 36px 40px;
+      margin-top: 32px;
+    }
+
+    .arch-callout p {
+      font-size: 16px;
+      color: var(--white-60);
+      line-height: 1.8;
+      max-width: 860px;
+    }
+
+    /* Product 02 info cards */
+    .product02-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    .product02-info-card {
+      background: var(--midnight-3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+    }
+
+    .product02-info-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white-30);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .product02-info-value {
+      font-size: 15px;
+      color: var(--white-60);
+    }
+
+    /* NDA CTA card */
+    .nda-card {
+      border: 1px dashed rgba(212,165,32,0.4);
+      border-radius: var(--radius-card);
+      padding: 32px 36px;
+      background: rgba(212,165,32,0.03);
+    }
+
+    /* Comparison cards */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .comparison-card {
+      background: var(--midnight-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .comparison-product {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--indigo-light);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .comparison-time {
+      font-family: 'Playfair Display', serif;
+      font-weight: 300;
+      font-size: clamp(24px, 3vw, 36px);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .comparison-detail {
+      font-size: 13px;
+      color: var(--white-30);
+    }
+
+    .comparison-card:first-child { opacity: 0.6; }
+    .comparison-card:nth-child(2) { border-color: var(--indigo-border); }
+    .comparison-card:last-child { border-color: rgba(212,165,32,0.3); }
+
+    .compound-body {
+      max-width: 680px;
+      margin: 32px auto 0;
+      text-align: center;
+      font-size: 16px;
+      color: var(--white-60);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .metrics-2x2 { grid-template-columns: 1fr; }
+      .product02-info-grid { grid-template-columns: 1fr; }
+      .comparison-grid { grid-template-columns: 1fr; }
+      .arch-callout { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark">E</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">ENERQUBIX AI</span>
+          <span class="nav-logo-sub">Private Limited</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="technology.html">Technology</a>
+        <a href="investors.html">Investors</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html" class="btn--contact-nav">Contact</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="nav-mobile">
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="technology.html">Technology</a>
+    <a href="investors.html">Investors</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html" class="btn--contact-nav">Contact</a>
+  </div>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="page-hero hero-bg section">
+    <div class="container">
+      <span class="eyebrow reveal">Products</span>
+      <h1 class="reveal" style="max-width:720px;margin:16px auto 24px;">
+        Precision-built.<br>Globally scaled.
+      </h1>
+      <p class="hero-body reveal">
+        One platform architecture. Multiple professional verticals.<br>
+        Each product makes the next one faster to build and better positioned to win.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRODUCT 01 — LIFECHIAI
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Live indicator -->
+      <div class="reveal" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:32px;">
+        <span class="eyebrow" style="margin-bottom:0;">Product 01</span>
+        <div class="live-indicator">
+          <span class="live-dot"></span>
+          LIVE · April 2026
+        </div>
+      </div>
+
+      <!-- Product name + tagline -->
+      <div class="reveal" style="margin-bottom:48px;">
+        <h1 style="font-size:clamp(48px,7vw,96px);margin-bottom:12px;">LifeChiAI</h1>
+        <p class="product-tagline">The AI Operating System for Pranic Healing Centres.</p>
+        <p class="product-gold-line">So healers can just heal.</p>
+      </div>
+
+      <!-- Two-column: description + metrics -->
+      <div class="grid-6-6 reveal-group" style="align-items:start;">
+
+        <!-- Left: description -->
+        <div class="reveal">
+          <p style="font-size:17px;color:var(--white-60);line-height:1.8;margin-bottom:20px;">
+            LifeChiAI is an AI-powered SaaS platform for pranic healing centres globally.
+            The core product — the AI Admin — replaces a human administrator entirely,
+            operating via WhatsApp automation 24 hours a day, 7 days a week.
+          </p>
+          <p style="font-size:16px;color:var(--white-60);line-height:1.8;margin-bottom:28px;">
+            Most pranic healing centres have no dedicated administrator. The centre head
+            and healers handle everything manually. LifeChiAI makes the centre run itself —
+            from patient intake to healer payout, every step automated.
+          </p>
+
+          <div class="pill-row" style="margin-bottom:32px;">
+            <span class="pill">WhatsApp AI Admin</span>
+            <span class="pill">Auto Invoicing</span>
+            <span class="pill">Payout Automation</span>
+            <span class="pill">GST Compliant</span>
+          </div>
+
+          <div class="btn-row">
+            <a href="https://lifechiai.com" target="_blank" rel="noopener" class="btn btn--primary">Visit LifeChiAI ↗</a>
+            <a href="technology.html" class="btn btn--secondary">Technical Architecture →</a>
+          </div>
+        </div>
+
+        <!-- Right: metrics + market card -->
+        <div class="reveal">
+          <div class="metrics-2x2">
+            <div class="metric-card">
+              <div class="metric-num">120+</div>
+              <div class="metric-label">Countries · MCKS community</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-num">100K+</div>
+              <div class="metric-label">Certified practitioners</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-num">₹4,999</div>
+              <div class="metric-label">Per month · AI Admin plan</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-num">Zero</div>
+              <div class="metric-label">Direct competitors globally</div>
+            </div>
+          </div>
+
+          <div class="market-pos-card">
+            <span class="market-pos-label">Market Position</span>
+            <p style="font-size:14px;color:var(--white-60);line-height:1.7;">
+              69–82% cheaper than the nearest comparable software at every tier.
+              The only platform built specifically for this community.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Architecture advantage callout -->
+      <div class="arch-callout reveal">
+        <span class="eyebrow eyebrow--indigo" style="margin-bottom:12px;">Architecture Advantage</span>
+        <p>
+          LifeChiAI runs on a multi-domain platform architecture. Expanding to a new
+          professional vertical — Reiki, Ayurveda, Physiotherapy — requires only a
+          configuration file and a knowledge base document. No new codebase. No new
+          infrastructure. This is the compounding advantage built into every product
+          from day one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRODUCT 02 — STEALTH
+       ============================================================ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;" class="reveal">
+        <span class="eyebrow eyebrow--white" style="margin-bottom:0;">Product 02</span>
+        <span class="badge badge--soon">IN DESIGN · TARGET: Q1 2027</span>
+      </div>
+
+      <h2 class="reveal" style="color:rgba(255,255,255,0.2);font-style:italic;margin-bottom:24px;">
+        [Confidential]
+      </h2>
+
+      <p class="reveal" style="color:var(--white-40);font-size:16px;max-width:680px;line-height:1.8;margin-bottom:28px;">
+        A second vertical AI platform sharing the LifeChiAI platform architecture.
+        Category: wellness and allied health. Global market exceeds 500,000 practitioners.
+        Estimated build time: 3–4 months using the shared core.
+      </p>
+
+      <div class="product02-info-grid reveal">
+        <div class="product02-info-card">
+          <span class="product02-info-label">Market Size</span>
+          <span class="product02-info-value">500,000+ practitioners globally</span>
+        </div>
+        <div class="product02-info-card">
+          <span class="product02-info-label">Build Time</span>
+          <span class="product02-info-value">3–4 months · Platform reuse</span>
+        </div>
+      </div>
+
+      <div class="nda-card reveal">
+        <h3 style="margin-bottom:12px;color:var(--gold);">Full brief available under NDA</h3>
+        <p style="margin-bottom:24px;max-width:560px;">
+          Full Product 02 brief — market size, vertical, architecture reuse plan — is
+          available to qualified investors under NDA.
+        </p>
+        <a href="investors.html" class="btn btn--gold">Request Brief →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ARCHITECTURE ADVANTAGE — COMPOUNDING
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <span class="eyebrow reveal">The Platform Advantage</span>
+        <h2 class="reveal" style="margin-bottom:16px;">One architecture. Compounding returns.</h2>
+      </div>
+
+      <div class="comparison-grid reveal-group">
+        <div class="comparison-card reveal">
+          <span class="comparison-product">PRODUCT 01</span>
+          <div class="comparison-time">18 months</div>
+          <div class="comparison-detail">Built from scratch</div>
+        </div>
+        <div class="comparison-card reveal">
+          <span class="comparison-product">PRODUCT 02</span>
+          <div class="comparison-time">3–4 months</div>
+          <div class="comparison-detail">Core reused</div>
+        </div>
+        <div class="comparison-card reveal">
+          <span class="comparison-product">PRODUCT 03+</span>
+          <div class="comparison-time">4–6 weeks</div>
+          <div class="comparison-detail">Per new vertical</div>
+        </div>
+      </div>
+
+      <p class="compound-body reveal">
+        Every product that ships makes the next product cheaper to build and faster
+        to market. This is compounding architecture — the same principle as compounding
+        interest, applied to product development. The moat widens with every vertical we add.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">E</div>
+            <div class="nav-logo-text">
+              <span class="nav-logo-name">ENERQUBIX AI</span>
+              <span class="nav-logo-sub">Private Limited</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            An AI company built from the inside of the problems it solves.
+            Incorporated in India. Building for the world.
+          </p>
+          <div class="footer-social">
+            <a href="#" title="LinkedIn">Li</a>
+            <a href="#" title="Twitter / X">X</a>
+            <a href="#" title="GitHub">Gh</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Company</span>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="technology.html">Technology</a></li>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Products</span>
+          <ul>
+            <li><a href="https://lifechiai.com" target="_blank" rel="noopener">LifeChiAI ↗</a></li>
+            <li><a href="products.html">Product Roadmap</a></li>
+            <li><a href="products.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Contact</span>
+          <a href="mailto:murugesh@enerqubix.ai" class="footer-contact-item">murugesh@enerqubix.ai</a>
+          <span class="footer-contact-item">Chennai, Tamil Nadu, India</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Enerqubix AI Private Limited · All rights reserved</span>
+        <span class="footer-bottom-center">Built in Chennai · For the world</span>
+        <div class="footer-bottom-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

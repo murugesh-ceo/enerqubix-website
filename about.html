@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Enerqubix AI Private Limited</title>
+  <meta name="description" content="Enerqubix AI is an Indian AI company building vertical SaaS products for professional communities that have been systematically underserved by general-purpose software.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* About-page specific styles */
+
+    .story-para {
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--white-60);
+      max-width: 740px;
+      margin-bottom: 28px;
+    }
+
+    .story-standalone {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--white);
+      max-width: 740px;
+      margin: 36px 0;
+      line-height: 1.5;
+    }
+
+    .story-pullquote {
+      border-left: 3px solid var(--gold);
+      padding-left: 28px;
+      max-width: 740px;
+      margin: 36px 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--white-90);
+      line-height: 1.5;
+    }
+
+    .signature-block {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      max-width: 740px;
+    }
+
+    .signature-name {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--white);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .signature-title {
+      font-size: 14px;
+      color: var(--white-30);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* Mission / Vision / Foundation cards */
+    .mvf-card {
+      background: var(--midnight-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 36px 40px;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 16px;
+    }
+
+    .mvf-card--indigo { border-left: 3px solid var(--indigo); }
+    .mvf-card--gold   { border-left: 3px solid var(--gold); }
+    .mvf-card--white  { border-left: 3px solid var(--white-30); }
+
+    .mvf-label-col {
+      padding-top: 6px;
+    }
+
+    .mvf-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 300;
+      font-size: clamp(20px, 2.5vw, 30px);
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    /* Values grid */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .values-grid .card:nth-child(4),
+    .values-grid .card:nth-child(5) {
+      grid-column: span 1;
+    }
+
+    /* 5-card layout: 3 top, 2 bottom centred */
+    .values-grid-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .values-row-bottom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: calc(66.67% + 8px);
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .mvf-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .values-grid-wrap,
+      .values-row-bottom {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark">E</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">ENERQUBIX AI</span>
+          <span class="nav-logo-sub">Private Limited</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="technology.html">Technology</a>
+        <a href="investors.html">Investors</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html" class="btn--contact-nav">Contact</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="nav-mobile">
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="technology.html">Technology</a>
+    <a href="investors.html">Investors</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html" class="btn--contact-nav">Contact</a>
+  </div>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="page-hero hero-bg section">
+    <div class="container">
+      <span class="eyebrow reveal">About Enerqubix AI</span>
+      <h1 class="reveal" style="max-width:820px;margin:16px auto 24px;">
+        An AI company built from the inside<br>of the problems it solves.
+      </h1>
+      <p class="hero-body reveal">
+        We do not research the communities we serve.<br>
+        We are part of them.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMPANY OVERVIEW
+       ============================================================ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="grid-6-6" style="align-items:start;">
+        <!-- Left: fact list -->
+        <div class="reveal">
+          <span class="eyebrow">Company Overview</span>
+          <div class="fact-list mt-24">
+            <div class="fact-item">
+              <span class="fact-label">Company</span>
+              <span class="fact-value">Enerqubix AI Private Limited</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Type</span>
+              <span class="fact-value">Private Limited Company · India</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Founded</span>
+              <span class="fact-value">2026</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Headquarters</span>
+              <span class="fact-value">Chennai, Tamil Nadu, India</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Products</span>
+              <span class="fact-value">LifeChiAI (live) · Product 02 (2027)</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Contact</span>
+              <span class="fact-value">
+                <a href="mailto:murugesh@enerqubix.ai" class="text-indigo">murugesh@enerqubix.ai</a>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: paragraph -->
+        <div class="reveal">
+          <p class="story-para" style="margin-top:48px;">
+            Enerqubix AI Private Limited is an Indian AI company building vertical SaaS
+            products for professional communities that have been systematically underserved
+            by general-purpose software. Our registered office is in Chennai, Tamil Nadu.
+            Our platforms are built for global markets from day one.
+          </p>
+          <p class="story-para">
+            We identify communities where the operational burden is acute and universal,
+            where existing software was never designed for their reality, and where AI can
+            replace that burden entirely — not partially. Then we build precisely for them.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOUNDER STORY
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow reveal">The Founder</span>
+      <h2 class="reveal" style="margin-bottom:48px;">Murugesh P — Founder &amp; CEO</h2>
+
+      <p class="story-para reveal">
+        I have spent twenty years building software and managing technology programmes
+        for some of the largest organisations in the world. TCS. Cognizant. Squareshift.
+        I have delivered enterprise transformation programmes across financial services,
+        healthcare, and manufacturing.
+      </p>
+
+      <p class="story-standalone reveal">
+        And then I ran a pranic healing centre.
+      </p>
+
+      <p class="story-para reveal">
+        I opened Pranic Wellness Centre in Perungudi, Chennai, because I believe in what
+        pranic healing gives to people. I had seen it work. I wanted to create a space where
+        it could happen consistently and with quality.
+      </p>
+
+      <p class="story-para reveal">
+        Within weeks, I discovered a problem that no amount of enterprise software experience
+        had prepared me for — not because it was technically complex, but because no one had
+        ever thought it was worth solving. The healers I worked with, and every centre head I
+        met across India and globally, were spending two to three hours every day on
+        administrative work. They were not healing. They were administrating.
+      </p>
+
+      <p class="story-para reveal">
+        And there was no software built for them. Every wellness management tool I evaluated
+        had been designed for yoga studios or physiotherapy chains — not for the specific
+        operational reality of a small pranic healing centre run by volunteer healers with
+        no dedicated administrator.
+      </p>
+
+      <div class="story-pullquote reveal">
+        So I built LifeChiAI.
+      </div>
+
+      <p class="story-para reveal">
+        But as I built it, I realised the problem was not specific to pranic healing. It was
+        structural. Across dozens of professional communities, the same pattern repeats:
+        highly trained professionals, spending their most valuable hours on work that requires
+        no training at all. That is the gap Enerqubix AI was built to close.
+      </p>
+
+      <div class="signature-block reveal">
+        <span class="signature-name">— Murugesh P</span>
+        <span class="signature-title">Founder &amp; CEO, Enerqubix AI Private Limited</span>
+        <a href="mailto:murugesh@enerqubix.ai" class="text-indigo" style="font-size:14px;">
+          murugesh@enerqubix.ai
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MISSION / VISION / FOUNDATION
+       ============================================================ -->
+  <section class="section section--alt">
+    <div class="container">
+      <span class="eyebrow reveal">Purpose</span>
+      <h2 class="reveal" style="margin-bottom:40px;">Mission, Vision &amp; Foundation</h2>
+
+      <div class="mvf-card mvf-card--indigo reveal">
+        <div class="mvf-label-col">
+          <span class="eyebrow eyebrow--indigo">Mission</span>
+        </div>
+        <p class="mvf-text">
+          To give every professional community purpose-built AI that absorbs their
+          operational burden — so they can practise their craft without interruption.
+        </p>
+      </div>
+
+      <div class="mvf-card mvf-card--gold reveal">
+        <div class="mvf-label-col">
+          <span class="eyebrow">Vision</span>
+        </div>
+        <p class="mvf-text">
+          A world where the most skilled professionals in every field spend zero time
+          on work that requires none of their skill.
+        </p>
+      </div>
+
+      <div class="mvf-card mvf-card--white reveal">
+        <div class="mvf-label-col">
+          <span class="eyebrow eyebrow--white">Foundation</span>
+        </div>
+        <p class="mvf-text">
+          Enerqubix AI is a founder-led company. Product decisions come from living
+          inside the problem. Privacy is architecture. Global from day one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       VALUES
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <span class="eyebrow reveal">Values</span>
+        <h2 class="reveal" style="margin-bottom:48px;">How we build.</h2>
+      </div>
+
+      <div class="values-grid-wrap reveal-group">
+        <div class="card reveal">
+          <h3 style="margin-bottom:12px;">Precision Over Breadth</h3>
+          <p>We build deeply for one community at a time. We would rather be indispensable
+            to 10,000 practitioners than adequate for 10 million.</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="margin-bottom:12px;">Built From the Inside</h3>
+          <p>Every Enerqubix product begins with the founder living the problem. Not
+            researching it. Not surveying it. Living it. This is the only way to build
+            software that actually fits.</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="margin-bottom:12px;">Privacy as Architecture</h3>
+          <p>Patient data, practitioner data, financial data — all of it is sensitive.
+            We design privacy into the data architecture before we write the first API route.</p>
+        </div>
+      </div>
+
+      <div class="values-row-bottom mt-24 reveal-group">
+        <div class="card reveal">
+          <h3 style="margin-bottom:12px;">Global from Day One</h3>
+          <p>India is our beachhead. Our pricing, payment infrastructure, and platform
+            architecture are global from the first deployment.</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="margin-bottom:12px;">Founder-Led Always</h3>
+          <p>Product decisions, strategic direction, and investor relationships are led
+            by the founder. This is not a constraint — it is the reason our products are
+            as precise as they are.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TIMELINE
+       ============================================================ -->
+  <section class="section section--alt">
+    <div class="container">
+      <span class="eyebrow reveal">Timeline</span>
+      <h2 class="reveal" style="margin-bottom:48px;">Where we are.</h2>
+
+      <div style="max-width:640px;">
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-date">Jan 2026</div>
+            <div class="timeline-content">Product brief v1.0 · Core concept validated</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Mar 2026</div>
+            <div class="timeline-content">PWC Oneness App launched · 69 features · Live production</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Apr 2026</div>
+            <div class="timeline-content">LifeChiAI named and launched · lifechiai.com registered</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Apr 2026</div>
+            <div class="timeline-content">Enerqubix AI Private Limited · Company name decided</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2026 Q3</div>
+            <div class="timeline-content">LifeChiAI AI Admin public launch · First paying customers</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2027</div>
+            <div class="timeline-content">Product 02 launch · Second vertical · Architecture shared</div>
+          </div>
+          <div class="timeline-item" style="padding-bottom:0;">
+            <div class="timeline-date">2027+</div>
+            <div class="timeline-content">Series A · If metrics support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">E</div>
+            <div class="nav-logo-text">
+              <span class="nav-logo-name">ENERQUBIX AI</span>
+              <span class="nav-logo-sub">Private Limited</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            An AI company built from the inside of the problems it solves.
+            Incorporated in India. Building for the world.
+          </p>
+          <div class="footer-social">
+            <a href="#" title="LinkedIn">Li</a>
+            <a href="#" title="Twitter / X">X</a>
+            <a href="#" title="GitHub">Gh</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Company</span>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="technology.html">Technology</a></li>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Products</span>
+          <ul>
+            <li><a href="https://lifechiai.com" target="_blank" rel="noopener">LifeChiAI ↗</a></li>
+            <li><a href="products.html">Product Roadmap</a></li>
+            <li><a href="products.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Contact</span>
+          <a href="mailto:murugesh@enerqubix.ai" class="footer-contact-item">murugesh@enerqubix.ai</a>
+          <span class="footer-contact-item">Chennai, Tamil Nadu, India</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Enerqubix AI Private Limited · All rights reserved</span>
+        <span class="footer-bottom-center">Built in Chennai · For the world</span>
+        <div class="footer-bottom-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

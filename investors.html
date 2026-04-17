@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investors — Enerqubix AI</title>
+  <meta name="description" content="Early-stage investment opportunity in vertical AI SaaS. Strong unit economics, global market, zero competition, founder-led. Contact Murugesh P directly.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Investors-page specific styles */
+
+    /* Opportunity cards — full-width stacked */
+    .opportunity-card {
+      background: var(--midnight-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 36px 40px;
+      margin-bottom: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .opportunity-card:hover { border-color: var(--border-hover); }
+    .opportunity-card--indigo { border-top: 2px solid var(--indigo); }
+    .opportunity-card--gold   { border-top: 2px solid var(--gold); }
+    .opportunity-card--white  { border-top: 2px solid var(--white-30); }
+
+    /* Thesis metrics row */
+    .thesis-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      background: var(--midnight-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .thesis-metric {
+      padding: 32px 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .thesis-metric + .thesis-metric::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 20%;
+      height: 60%;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .thesis-metric-value {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(20px, 2.5vw, 28px);
+      color: var(--white);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .thesis-metric-label {
+      font-size: 12px;
+      color: var(--white-30);
+      line-height: 1.5;
+    }
+
+    /* Thesis detail cards */
+    .thesis-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .thesis-detail-card {
+      background: var(--midnight-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 28px 32px;
+    }
+
+    /* Traction — horizontal timeline */
+    .traction-note {
+      font-style: italic;
+      font-size: 13px;
+      color: var(--white-30);
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    /* Contact investor card */
+    .investor-contact-card {
+      background: var(--midnight-3);
+      border: 1px solid var(--indigo-border);
+      border-radius: var(--radius-card);
+      padding: 48px;
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .investor-contact-email {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      color: var(--indigo-light);
+      display: block;
+      margin: 24px 0 8px;
+    }
+
+    .investor-contact-subject {
+      font-size: 13px;
+      color: var(--white-30);
+      margin-bottom: 28px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .investor-contact-guidance {
+      font-size: 13px;
+      color: var(--white-30);
+      font-style: italic;
+      line-height: 1.7;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    @media (max-width: 768px) {
+      .thesis-metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+      .thesis-metrics .thesis-metric:nth-child(odd)::before { display: none; }
+      .thesis-detail-grid { grid-template-columns: 1fr; }
+      .investor-contact-card { padding: 28px 24px; }
+    }
+
+    @media (max-width: 480px) {
+      .thesis-metrics { grid-template-columns: 1fr; }
+      .thesis-metric + .thesis-metric::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark">E</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">ENERQUBIX AI</span>
+          <span class="nav-logo-sub">Private Limited</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="technology.html">Technology</a>
+        <a href="investors.html">Investors</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html" class="btn--contact-nav">Contact</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="nav-mobile">
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="technology.html">Technology</a>
+    <a href="investors.html">Investors</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html" class="btn--contact-nav">Contact</a>
+  </div>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="page-hero hero-bg section">
+    <div class="container">
+      <span class="eyebrow reveal">Investor Relations</span>
+      <h1 class="reveal" style="max-width:800px;margin:16px auto 24px;">
+        An early-stage opportunity in<br>vertical AI SaaS with global reach.
+      </h1>
+      <p class="hero-body reveal">
+        Enerqubix AI is building a portfolio of purpose-built AI platforms for
+        underserved professional communities.<br>
+        We are at the beginning of a long-term, compounding business.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       THE OPPORTUNITY
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow reveal">The Opportunity</span>
+      <h2 class="reveal" style="margin-bottom:40px;">Three reasons this exists now.</h2>
+
+      <div class="opportunity-card opportunity-card--indigo reveal">
+        <h3 style="margin-bottom:14px;">Why now.</h3>
+        <p style="font-size:16px;color:var(--white-60);line-height:1.8;max-width:800px;">
+          Large language models have reached the capability threshold where they can
+          reliably handle complex operational workflows — not just answer questions.
+          The infrastructure cost has dropped to the point where an AI Admin costs less
+          per month than a part-time human administrator. These two conditions did not
+          simultaneously exist before 2024.
+        </p>
+      </div>
+
+      <div class="opportunity-card opportunity-card--gold reveal">
+        <h3 style="margin-bottom:14px;">Why this vertical.</h3>
+        <p style="font-size:16px;color:var(--white-60);line-height:1.8;max-width:800px;">
+          The MCKS pranic healing community spans 120+ countries with 100,000+ certified
+          practitioners. It is globally distributed, culturally unified, WhatsApp-dependent,
+          and completely unserved by purpose-built software. We are 69–82% cheaper than the
+          nearest comparable at every tier — and infinitely more relevant.
+        </p>
+      </div>
+
+      <div class="opportunity-card opportunity-card--white reveal">
+        <h3 style="margin-bottom:14px;">Why us.</h3>
+        <p style="font-size:16px;color:var(--white-60);line-height:1.8;max-width:800px;">
+          The founder is a 20-year enterprise technology professional who also runs a
+          pranic healing centre. He lived the problem for years before building the solution.
+          He is the first customer of his own product. This is the most defensible
+          founder-market fit in this category — globally.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       INVESTMENT THESIS
+       ============================================================ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="text-center">
+        <span class="eyebrow reveal">Investment Thesis</span>
+        <h2 class="reveal" style="margin-bottom:40px;">The business model.</h2>
+      </div>
+
+      <div class="thesis-metrics reveal">
+        <div class="thesis-metric">
+          <span class="thesis-metric-value">SaaS</span>
+          <span class="thesis-metric-label">Subscription<br>Monthly recurring revenue</span>
+        </div>
+        <div class="thesis-metric">
+          <span class="thesis-metric-value">80–90%</span>
+          <span class="thesis-metric-label">Target gross margin<br>at scale</span>
+        </div>
+        <div class="thesis-metric">
+          <span class="thesis-metric-value">&lt; 10%</span>
+          <span class="thesis-metric-label">Infrastructure<br>as % of MRR</span>
+        </div>
+        <div class="thesis-metric">
+          <span class="thesis-metric-value">Community</span>
+          <span class="thesis-metric-label">Low CAC<br>High LTV</span>
+        </div>
+      </div>
+
+      <div class="thesis-detail-grid reveal-group">
+
+        <div class="thesis-detail-card reveal">
+          <span class="eyebrow eyebrow--indigo" style="margin-bottom:12px;">Business Model</span>
+          <h3 style="margin-bottom:16px;">Revenue structure</h3>
+          <p style="font-size:14px;color:var(--white-60);line-height:1.8;margin-bottom:12px;">
+            Free tier → 14-day trial → paid conversion
+          </p>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div class="stack-item" style="border-bottom:1px solid rgba(255,255,255,0.04);padding:8px 0;">
+              <span class="mono">India</span>
+              <span style="font-size:13px;color:var(--white-30);">₹499 – ₹19,999 / month</span>
+            </div>
+            <div class="stack-item" style="padding:8px 0;">
+              <span class="mono">Global</span>
+              <span style="font-size:13px;color:var(--white-30);">$6 – $149 / month</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="thesis-detail-card reveal">
+          <span class="eyebrow" style="margin-bottom:12px;">Product Roadmap</span>
+          <h3 style="margin-bottom:16px;">Pipeline</h3>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div>
+              <span class="mono" style="display:block;margin-bottom:4px;">LifeChiAI</span>
+              <span style="font-size:13px;color:var(--white-30);">Live · April 2026</span>
+            </div>
+            <div style="border-top:1px solid var(--border);padding-top:10px;">
+              <span class="mono" style="display:block;margin-bottom:4px;">Product 02</span>
+              <span style="font-size:13px;color:var(--white-30);">Architecture complete · Design phase</span>
+            </div>
+            <div style="border-top:1px solid var(--border);padding-top:10px;">
+              <span style="font-size:13px;color:var(--white-30);">Each new vertical: 3–4 months using shared core</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="thesis-detail-card reveal">
+          <span class="eyebrow eyebrow--white" style="margin-bottom:12px;">Market Size</span>
+          <h3 style="margin-bottom:16px;">TAM</h3>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div>
+              <span style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--white-30);display:block;margin-bottom:4px;">India TAM</span>
+              <span style="font-size:14px;color:var(--white-60);">300,000+ potential customers across pranic healing, Reiki, Ayurveda, physiotherapy</span>
+            </div>
+            <div style="border-top:1px solid var(--border);padding-top:10px;">
+              <span style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--white-30);display:block;margin-bottom:4px;">Global TAM</span>
+              <span style="font-size:14px;color:var(--white-60);">Multi-billion dollar wellness market</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRACTION
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow reveal">Traction</span>
+      <h2 class="reveal" style="margin-bottom:48px;">Milestones.</h2>
+
+      <div class="h-timeline reveal">
+        <div class="h-timeline-item">
+          <div class="h-timeline-date">Apr 2026</div>
+          <div class="h-timeline-label">AI Admin<br>launched</div>
+        </div>
+        <!-- TODO: Replace with actual milestone date -->
+        <div class="h-timeline-item">
+          <div class="h-timeline-date">Month X</div>
+          <div class="h-timeline-label">First paying<br>customer</div>
+        </div>
+        <!-- TODO: Replace with actual milestone date -->
+        <div class="h-timeline-item">
+          <div class="h-timeline-date">Month X</div>
+          <div class="h-timeline-label">5 customers<br>₹25K MRR</div>
+        </div>
+        <!-- TODO: Replace with actual milestone date -->
+        <div class="h-timeline-item">
+          <div class="h-timeline-date">Month X</div>
+          <div class="h-timeline-label">20 customers<br>₹80K MRR</div>
+        </div>
+        <!-- TODO: Replace with actual milestone date -->
+        <div class="h-timeline-item">
+          <div class="h-timeline-date">Month X</div>
+          <div class="h-timeline-label">App Store<br>launch</div>
+        </div>
+        <!-- TODO: Replace with actual milestone date -->
+        <div class="h-timeline-item">
+          <div class="h-timeline-date">Month X</div>
+          <div class="h-timeline-label">First international<br>customer</div>
+        </div>
+      </div>
+
+      <p class="traction-note reveal">Traction data updated as milestones are reached.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT INVESTOR
+       ============================================================ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="investor-contact-card reveal">
+        <h2 style="margin-bottom:16px;">Talk to the founder directly.</h2>
+        <p style="font-size:16px;color:var(--white-60);line-height:1.8;margin-bottom:8px;">
+          Investor enquiries are handled by Murugesh P.
+          No intermediaries. No intake forms. Direct contact
+          is preferred and responded to within 48 hours.
+        </p>
+
+        <a href="mailto:murugesh@enerqubix.ai?subject=Investor%20Enquiry%20%E2%80%94%20" class="investor-contact-email">
+          murugesh@enerqubix.ai
+        </a>
+        <p class="investor-contact-subject">
+          Subject: Investor Enquiry — [Your Organisation]
+        </p>
+
+        <a href="mailto:murugesh@enerqubix.ai?subject=Investor%20Enquiry%20%E2%80%94%20" class="btn btn--primary" style="width:100%;justify-content:center;">
+          Send Investor Enquiry →
+        </a>
+
+        <p class="investor-contact-guidance">
+          Please include: your organisation and role,
+          stage and typical cheque size, and what drew
+          you to Enerqubix AI.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">E</div>
+            <div class="nav-logo-text">
+              <span class="nav-logo-name">ENERQUBIX AI</span>
+              <span class="nav-logo-sub">Private Limited</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            An AI company built from the inside of the problems it solves.
+            Incorporated in India. Building for the world.
+          </p>
+          <div class="footer-social">
+            <a href="#" title="LinkedIn">Li</a>
+            <a href="#" title="Twitter / X">X</a>
+            <a href="#" title="GitHub">Gh</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Company</span>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="technology.html">Technology</a></li>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Products</span>
+          <ul>
+            <li><a href="https://lifechiai.com" target="_blank" rel="noopener">LifeChiAI ↗</a></li>
+            <li><a href="products.html">Product Roadmap</a></li>
+            <li><a href="products.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Contact</span>
+          <a href="mailto:murugesh@enerqubix.ai" class="footer-contact-item">murugesh@enerqubix.ai</a>
+          <span class="footer-contact-item">Chennai, Tamil Nadu, India</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Enerqubix AI Private Limited · All rights reserved</span>
+        <span class="footer-bottom-center">Built in Chennai · For the world</span>
+        <div class="footer-bottom-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

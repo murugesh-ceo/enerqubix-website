@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers — Enerqubix AI</title>
+  <meta name="description" content="Join Enerqubix AI — build real AI that runs production systems. Small team, full ownership, early equity, remote-first. Open roles: Full-Stack, AI/ML, Product Designer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Careers-page specific styles */
+
+    /* What it's like — 2x2 cards */
+    .culture-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    /* Role cards */
+    .roles-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .role-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .role-req {
+      font-size: 14px;
+      color: var(--white-30);
+      line-height: 1.6;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* How to apply */
+    .apply-card {
+      background: var(--midnight-3);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius-card);
+      padding: 40px 48px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .apply-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0 24px;
+    }
+
+    .apply-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--white-60);
+    }
+
+    .apply-list-item::before {
+      content: '→';
+      color: var(--gold);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .culture-grid { grid-template-columns: 1fr; }
+      .apply-card { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark">E</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">ENERQUBIX AI</span>
+          <span class="nav-logo-sub">Private Limited</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="technology.html">Technology</a>
+        <a href="investors.html">Investors</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html" class="btn--contact-nav">Contact</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="nav-mobile">
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="technology.html">Technology</a>
+    <a href="investors.html">Investors</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html" class="btn--contact-nav">Contact</a>
+  </div>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="page-hero hero-bg section">
+    <div class="container">
+      <span class="eyebrow reveal">Careers</span>
+      <h1 class="reveal" style="max-width:800px;margin:16px auto 24px;">
+        Build things that matter<br>for people who deserve them.
+      </h1>
+      <p class="hero-body reveal">
+        Early-stage. Small team. Real AI. Full ownership.<br>
+        Work that reaches professionals who have never had software designed for them.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHAT IT'S LIKE
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow reveal">What It's Like</span>
+      <h2 class="reveal" style="margin-bottom:40px;">How we work.</h2>
+
+      <div class="culture-grid reveal-group">
+        <div class="card reveal">
+          <h3 style="margin-bottom:12px;">Small Team · Full Ownership</h3>
+          <p>Every engineer owns their domain end to end. There are no handoff boundaries
+            between design, development, and deployment. You see customer impact directly.</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="margin-bottom:12px;">Real AI Work</h3>
+          <p>Not wrapper apps. Not chatbots. Operational AI agents that run production systems
+            for real businesses. Claude Sonnet, Whisper, WhatsApp Business API — working
+            together in a live product.</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="margin-bottom:12px;">Remote-First · Chennai-Connected</h3>
+          <p>The team works remotely. We meet in Chennai quarterly. If you are in Chennai,
+            you are welcome to work alongside the founder.</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="margin-bottom:12px;">Early Equity</h3>
+          <p>We offer meaningful equity to early team members. This is a long-term company.
+            We want people who think in years, not quarters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OPEN ROLES
+       ============================================================ -->
+  <section class="section section--alt">
+    <div class="container">
+      <span class="eyebrow reveal">Open Roles</span>
+      <h2 class="reveal" style="margin-bottom:40px;">We are hiring.</h2>
+
+      <div class="roles-stack">
+
+        <!-- Role 1: Full-Stack Engineer -->
+        <div class="role-card reveal">
+          <div class="role-card-content">
+            <div class="role-card-header">
+              <div>
+                <h3 style="margin-bottom:4px;">Full-Stack Engineer</h3>
+                <span class="role-location">Remote · India</span>
+              </div>
+              <div class="role-card-cta">
+                <a href="mailto:murugesh@enerqubix.ai?subject=Full-Stack%20Engineer%20%E2%80%94%20" class="btn btn--primary">Apply for this Role →</a>
+              </div>
+            </div>
+            <p class="role-tech">React · Node.js · MongoDB</p>
+            <p style="font-size:15px;color:var(--white-60);line-height:1.7;margin-bottom:8px;">
+              You will build: AI Admin workflows, finance module, multi-tenant features,
+              React Native app.
+            </p>
+            <p class="role-req">
+              Required: 3+ years, strong Node.js, comfortable with MongoDB aggregations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Role 2: AI / ML Engineer -->
+        <div class="role-card reveal">
+          <div class="role-card-content">
+            <div class="role-card-header">
+              <div>
+                <h3 style="margin-bottom:4px;">AI / ML Engineer</h3>
+                <span class="role-location">Remote · India</span>
+              </div>
+              <div class="role-card-cta">
+                <a href="mailto:murugesh@enerqubix.ai?subject=AI%20ML%20Engineer%20%E2%80%94%20" class="btn btn--primary">Apply for this Role →</a>
+              </div>
+            </div>
+            <p class="role-tech">Claude API · n8n · WhatsApp Business API</p>
+            <p style="font-size:15px;color:var(--white-60);line-height:1.7;margin-bottom:8px;">
+              You will build: Agent pipelines, intent classification, knowledge base
+              architecture, voice assistant.
+            </p>
+            <p class="role-req">
+              Required: Experience with LLM APIs, prompt engineering, and agentic workflows.
+            </p>
+          </div>
+        </div>
+
+        <!-- Role 3: Product Designer -->
+        <div class="role-card reveal">
+          <div class="role-card-content">
+            <div class="role-card-header">
+              <div>
+                <h3 style="margin-bottom:4px;">Product Designer</h3>
+                <span class="role-location">Remote · India</span>
+              </div>
+              <div class="role-card-cta">
+                <a href="mailto:murugesh@enerqubix.ai?subject=Product%20Designer%20%E2%80%94%20" class="btn btn--primary">Apply for this Role →</a>
+              </div>
+            </div>
+            <p class="role-tech">Figma · Mobile-first · Healthcare context</p>
+            <p style="font-size:15px;color:var(--white-60);line-height:1.7;margin-bottom:8px;">
+              You will build: React Native UI, patient experience, healer dashboards,
+              onboarding flows.
+            </p>
+            <p class="role-req">
+              Required: 2+ years product design, mobile portfolio.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOW TO APPLY
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="apply-card reveal">
+        <h3 style="margin-bottom:16px;">How to apply.</h3>
+        <p style="font-size:15px;color:var(--white-60);line-height:1.7;margin-bottom:4px;">
+          No recruiter involved. Email Murugesh directly at
+          <a href="mailto:murugesh@enerqubix.ai" class="text-indigo">murugesh@enerqubix.ai</a>
+          with subject:
+        </p>
+        <p class="mono" style="margin-bottom:16px;color:var(--white-30);">
+          [Role] — [Your Name]
+        </p>
+
+        <p style="font-size:13px;color:var(--white-30);text-transform:uppercase;letter-spacing:0.1em;font-weight:500;margin-bottom:12px;">
+          Three things to include
+        </p>
+        <div class="apply-list">
+          <div class="apply-list-item">GitHub or portfolio link</div>
+          <div class="apply-list-item">3 sentences on why this specific problem interests you</div>
+          <div class="apply-list-item">What you are currently building or have recently shipped</div>
+        </div>
+
+        <p style="font-size:13px;color:var(--white-30);font-style:italic;line-height:1.7;margin-top:16px;">
+          We do not read cover letters. We do read GitHub profiles.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">E</div>
+            <div class="nav-logo-text">
+              <span class="nav-logo-name">ENERQUBIX AI</span>
+              <span class="nav-logo-sub">Private Limited</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            An AI company built from the inside of the problems it solves.
+            Incorporated in India. Building for the world.
+          </p>
+          <div class="footer-social">
+            <a href="#" title="LinkedIn">Li</a>
+            <a href="#" title="Twitter / X">X</a>
+            <a href="#" title="GitHub">Gh</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Company</span>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="technology.html">Technology</a></li>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Products</span>
+          <ul>
+            <li><a href="https://lifechiai.com" target="_blank" rel="noopener">LifeChiAI ↗</a></li>
+            <li><a href="products.html">Product Roadmap</a></li>
+            <li><a href="products.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-heading">Contact</span>
+          <a href="mailto:murugesh@enerqubix.ai" class="footer-contact-item">murugesh@enerqubix.ai</a>
+          <span class="footer-contact-item">Chennai, Tamil Nadu, India</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Enerqubix AI Private Limited · All rights reserved</span>
+        <span class="footer-bottom-center">Built in Chennai · For the world</span>
+        <div class="footer-bottom-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
