@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enerqubix AI — Building Intelligent Software for Wellness</title>
+<meta name="description" content="Enerqubix AI Private Limited — Building intelligent software for wellness and healthcare. Creator of LifeChiAI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal:       #0D7377;
+    --teal-light: #14A085;
+    --teal-pale:  #E1F5EE;
+    --ink:        #111918;
+    --ink-mid:    #3A4A48;
+    --ink-light:  #6B7F7D;
+    --cream:      #F7F5F0;
+    --white:      #FFFFFF;
+    --rule:       rgba(13,115,119,0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 5vw;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-logo {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.2rem;
+    color: var(--teal);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-logo span {
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  .nav-cta {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--teal);
+    text-decoration: none;
+    border: 1.5px solid var(--teal);
+    padding: 0.45rem 1.1rem;
+    border-radius: 100px;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--teal); color: var(--white); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 5vw 5rem;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 55vw;
+    height: 55vw;
+    background: radial-gradient(circle, rgba(13,115,119,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1.5px;
+    background: var(--teal);
+  }
+
+  .hero h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    max-width: 14ch;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--teal);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--ink-mid);
+    max-width: 44ch;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--teal);
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.8rem 1.75rem;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1.5px solid var(--teal);
+  }
+  .btn-primary:hover {
+    background: #0a5e62;
+    border-color: #0a5e62;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--ink-mid);
+    font-size: 0.95rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .btn-secondary:hover { color: var(--teal); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 5vw;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  .scroll-line {
+    width: 2.5rem;
+    height: 1px;
+    background: var(--ink-light);
+    animation: scrollPulse 2s infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    padding: 7rem 5vw;
+    background: var(--cream);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .section-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+    max-width: 1100px;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    padding-top: 0.5rem;
+  }
+
+  .about-body h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-body p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--ink-mid);
+    margin-bottom: 1rem;
+    max-width: 60ch;
+  }
+
+  .about-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .stat-num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 2.2rem;
+    color: var(--teal);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── PRODUCT ── */
+  .product {
+    padding: 7rem 5vw;
+    background: var(--white);
+  }
+
+  .product-card {
+    max-width: 1100px;
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 50%;
+    height: 150%;
+    background: radial-gradient(ellipse, rgba(13,115,119,0.25) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .product-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    background: rgba(13,115,119,0.15);
+    border: 1px solid rgba(13,115,119,0.3);
+    padding: 0.3rem 0.85rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-card h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    margin-bottom: 1.25rem;
+  }
+
+  .product-card p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--teal-light);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .product-link:hover { gap: 0.85rem; }
+
+  .product-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+  }
+
+  .feature-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(13,115,119,0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--teal-light);
+    font-size: 1rem;
+  }
+
+  .feature-text h4 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+  }
+
+  .feature-text p {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.45);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    padding: 7rem 5vw;
+    background: var(--teal-pale);
+    border-top: 1px solid var(--rule);
+  }
+
+  .contact-inner {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .contact h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  .contact p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--ink-mid);
+    margin-bottom: 0;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .contact-item-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  .contact-item-value {
+    font-size: 1rem;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+  a.contact-item-value:hover { color: var(--teal); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2rem 5vw;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+  }
+
+  .footer-logo strong { color: rgba(255,255,255,0.9); }
+
+  footer p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .section-grid,
+    .product-card,
+    .contact-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .product-card { padding: 2.5rem 1.75rem; }
+
+    .about-stats { gap: 2rem; }
+
+    nav { padding: 1rem 4vw; }
+
+    .hero { padding: 7rem 4vw 4rem; }
+
+    footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+  .hero h1 { animation: fadeUp 0.7s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.7s 0.2s ease both; }
+  .hero-actions { animation: fadeUp 0.7s 0.3s ease both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Enerqubix <span>AI</span></a>
+  <a href="https://lifechiai.com" class="nav-cta" target="_blank">Visit LifeChiAI →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Enerqubix AI Private Limited</div>
+  <h1>Intelligent software for <em>wellness</em> and healthcare</h1>
+  <p class="hero-sub">We build AI-powered platforms that automate operations for wellness centres and healthcare practitioners — so they can focus on what they do best.</p>
+  <div class="hero-actions">
+    <a href="https://lifechiai.com" class="btn-primary" target="_blank">
+      Explore LifeChiAI
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="#contact" class="btn-secondary">
+      Get in touch
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="hero-scroll">
+    <span class="scroll-line"></span>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-grid">
+    <div class="section-label">About us</div>
+    <div class="about-body">
+      <h2>Building at the intersection of AI and wellness</h2>
+      <p>Enerqubix AI was founded in Chennai, India with a clear mission — to give small wellness centres and independent practitioners the same operational capabilities as large enterprises, powered by AI.</p>
+      <p>Our team brings 20+ years of enterprise technology and program management experience from companies including TCS, Cognizant, and Squareshift — now applied to building products for the wellness community.</p>
+      <div class="about-stats">
+        <div class="stat-item">
+          <span class="stat-num">2026</span>
+          <span class="stat-label">Founded</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">120+</span>
+          <span class="stat-label">Countries served</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">1</span>
+          <span class="stat-label">Product live</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section class="product" id="product">
+  <div class="product-card">
+    <div style="position:relative;z-index:1;">
+      <div class="product-tag">Our product</div>
+      <h2>LifeChiAI</h2>
+      <p>The AI Admin platform built specifically for pranic healing centres and wellness practitioners. WhatsApp AI agent, voice session recording, multi-centre management, and intelligent booking — all in one platform.</p>
+      <a href="https://lifechiai.com" class="product-link" target="_blank">
+        Visit lifechiai.com
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="product-features">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>WhatsApp AI Agent</h4>
+          <p>Handles patient bookings, class enquiries, and intake — 24/7 in Tamil, Hindi &amp; English.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>Voice Session Recording</h4>
+          <p>Healers dictate chakra scans and session notes by voice — auto-transcribed and saved.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>Multi-Centre Management</h4>
+          <p>One owner dashboard across all centres. Consolidated payouts, analytics, and billing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <h2>Let's build something meaningful together</h2>
+      <p>Whether you run a healing centre, are a wellness practitioner, or want to explore a partnership — we would love to hear from you.</p>
+    </div>
+    <div class="contact-details">
+      <div class="contact-item">
+        <span class="contact-item-label">Email</span>
+        <a href="mailto:murugesh@enerqubix.com" class="contact-item-value">murugesh@enerqubix.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">Product</span>
+        <a href="https://lifechiai.com" class="contact-item-value" target="_blank">lifechiai.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">Location</span>
+        <span class="contact-item-value">Chennai, Tamil Nadu, India</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">Legal entity</span>
+        <span class="contact-item-value">Enerqubix AI Private Limited</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="footer-logo"><strong>Enerqubix</strong> AI</a>
+  <p>© 2026 Enerqubix AI Private Limited. Chennai, India.</p>
+</footer>
+
+</body>
+</html>
